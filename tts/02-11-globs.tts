@@ -1,0 +1,9 @@
+Globs, matching filenames with patterns.
+
+A glob is a wildcard pattern that the shell uses to match filenames. When you type star, dot, t-x-t, the shell expands it into the list of every file ending in dot t-x-t in the current directory, and it does this before your command ever runs.
+
+There are a few pattern characters. A star matches any number of characters, including none, except a leading dot. A question mark matches exactly one character. Square brackets around several letters match any one of them, and you can give a range inside the brackets, like a through z. Put an exclamation mark just inside the brackets and it matches any single character except the ones listed. So a pattern like report, then a question mark, then dot c-s-v matches report-one and report-nine, but not report-ten, because the question mark stands for exactly one character.
+
+Two rules really matter. First, globs are expanded by the shell, not by the command. When you list star dot t-x-t, the shell has already turned that into the actual list of filenames, and the list command never even knows a wildcard was involved. Second, if a glob matches nothing at all, bash by default leaves the literal pattern in place, so the command receives the raw star pattern and usually complains that no such file exists. That surprises a lot of beginners.
+
+And the most important warning: globs are not regular expressions, even though they look similar. In a glob, a star means any number of characters. In a regular expression, a star means zero or more of the previous character. They are different languages with different rules, and they often appear close together, so keep them firmly separate in your mind. Regular expressions show up later, in tools like grep, sed, and awk.

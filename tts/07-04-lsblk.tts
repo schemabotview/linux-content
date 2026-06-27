@@ -1,0 +1,7 @@
+L-s-b-l-k, seeing what is attached.
+
+When you want to understand the storage on a system, the very first command to run is l-s-b-l-k, which stands for list block devices. It prints a tree showing every block device, the partitions on it, and where each one is mounted. Reading it from the top down, you see a disk, then its partitions branching beneath it, and on a partition you might see a logical volume, marked as such, mounted at the root of the filesystem. In one glance you understand the whole layout.
+
+A few flags make it more useful. Dash f also shows the filesystem type, the label, and the u-u-i-d for each device, which is exactly what you need when filling in mount configuration. Dash p prints the full device path rather than the short name. Dash a includes empty devices that would otherwise be hidden. Dash capital-j produces j-s-o-n output for scripts. And dash o lets you choose precisely which columns you want.
+
+Two related commands round out the picture. B-l-k-i-d prints the u-u-i-d and filesystem type for a device, or for every device if you give it no argument. And find-mount shows the mounted filesystems as a clean, readable tree, generally easier on the eye than the older mount command on its own. Between l-s-b-l-k, b-l-k-i-d, and find-mount, you can map out any machine's storage in a moment.

@@ -1,0 +1,9 @@
+Find, searching the filesystem.
+
+Grep searches inside files; find searches for files. It locates them by name, type, size, modification time, ownership, or any combination of these. It is slower than some rivals because it walks the actual directory tree on every run, but it is absolutely everywhere, present even on the most stripped-down systems, which is why it is worth knowing well.
+
+The shape of a find command is one or more starting paths, followed by a chain of tests, which find calls predicates. With no predicates at all, it simply lists everything beneath the starting paths, which is occasionally useful, for instance to count all the regular files under the current directory.
+
+The predicates are where the power lives. Dash name matches files by their name against a glob pattern, and you should always quote that pattern so the shell does not expand it first; dash i-name does the same case-insensitively. Dash type f restricts to regular files, dash type d to directories, dash type l to symbolic links. Dash size finds files above or below a given size, using a plus sign for larger-than and a minus sign for smaller-than. Dash m-time finds files by how many days ago they were modified, again with plus and minus for older-than and newer-than, and dash m-min does the same in minutes. There are also dash user and dash group for ownership, dash perm for an exact or minimum permission set, and dash empty for empty files and directories.
+
+Two more things make find practical. Predicates combine: simply placing them side by side means and, dash o means or, and an exclamation mark means not, with escaped parentheses for grouping. And dash max-depth limits how deep find will recurse, which keeps a search fast and focused when you only care about the top level or two.

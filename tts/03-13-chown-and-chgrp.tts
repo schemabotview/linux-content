@@ -1,0 +1,7 @@
+Change owner and change group.
+
+Alongside the permissions, every file stores who owns it and which group it belongs to. You change those with change-owner, spelled c-h-o-w-n, and change-group, spelled c-h-g-r-p. Change-owner can do both at once when you give it an owner, a colon, and a group; give it just a leading colon and a group, and it changes only the group.
+
+Here is the important rule: you almost always need sudo to change ownership. A regular user cannot hand a file to someone else, because if they could, security would collapse, anyone could simply give themselves files they were never meant to have. Only the root user can reassign ownership freely. Change-group is a little more relaxed; a regular user who owns a file may change its group to another group they themselves belong to, but in practice you will still see sudo in front of it most of the time.
+
+A very common situation makes this concrete. When you use sudo to install something, the files it creates end up owned by root. To make them yours again, you run change-owner recursively, with the dash capital-r flag, naming your own user account for both the owner and the group across the whole directory tree. That single recursive command is how you take ownership back. We will dig much deeper into users and groups later; for now, just hold on to the idea that change-owner is how files move between accounts.

@@ -1,0 +1,9 @@
+Sed, the stream editor.
+
+Sed reads its input line by line, applies a little editing script to each line, and writes the result to standard output. The good news is that the overwhelming majority of real-world sed use is a single command: substitution, written s, slash, the pattern, slash, the replacement, slash. Learn just that and you have covered almost everything you will ever need.
+
+By default, substitution replaces only the first match on each line. Add the g flag, for global, at the end and it replaces every match on the line. Add an i flag and the match becomes case-insensitive. As with grep, use the dash capital-e flag for extended regular expressions, so you do not have to escape the plus, question mark, parentheses, and braces.
+
+Sed has one feature worth singling out: back-references. When you wrap part of your pattern in parentheses, you capture it, and you can refer back to those captured pieces in the replacement as backslash-one, backslash-two, and so on, counting the parentheses from the left. That is how you reorder or restructure text, for instance swapping two words around.
+
+Two more practical points. You can choose a different delimiter when your pattern itself contains slashes, which gets ugly with file paths; just use a vertical bar or a hash sign instead of the slash, and it reads far more cleanly. And the dash i flag edits a file in place, changing it directly instead of printing to the screen, optionally keeping a backup copy. When sed starts to feel clunky, with multiple substitutions or anything that needs to remember state, that is your signal to reach for awk or a real scripting language. Keep sed for what it does beautifully: simple substitutions inside a pipeline.

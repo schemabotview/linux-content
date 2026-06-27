@@ -1,0 +1,7 @@
+Kill, kill-all, and p-kill.
+
+Three commands send signals, and they differ mainly in how you point them at the target. The first is kill, which sends a signal to a process by its process I-D. By default it sends sig-term, the polite shutdown, but you can choose any signal by name or number after a dash. So kill followed by a process I-D asks it to terminate, kill dash nine sends the forceful sig-kill, and kill dash h-u-p tells the process to reload its configuration. Despite its name, kill is really just send-a-signal.
+
+The second is kill-all, which targets every process matching a given program name rather than a single I-D. This is what you want when you know the program but not its number; you can ask every copy of a web server to stop, or forcefully kill every browser process, or send a reload to every instance of a logging daemon. Note that kill-all matches the exact name of the executable, so for partial matches or patterns you turn to the third command.
+
+That third command is p-kill, which works like kill-all but matches against a pattern, and with the dash f flag it matches against the whole command line, not just the program name. You can also select processes by the user who owns them. Its companion, p-grep, is the safe inspection tool: it takes the same patterns but only lists the matching process I-Ds instead of signalling them. The wise workflow is to run p-grep first to confirm you are about to hit exactly the right targets, and then, once you are satisfied with the list, swap p-grep for p-kill using the very same flags.

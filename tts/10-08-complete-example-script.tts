@@ -1,0 +1,9 @@
+A complete example script.
+
+Let us put the pieces together into one realistic script: a tool that takes a directory and reports the five biggest files inside it, with proper error handling. Walking through it shows every idea from this chapter working in concert.
+
+It begins, as a good script should, with a shebang and the production preamble, the set command with error-exit, no-unset, and pipefail all switched on. Next it defines a usage function, a very common pattern, which prints a short message explaining how to call the script, using a here-document, and then exits with code two to signal misuse. After that comes an argument check: if the number of arguments is not exactly one, it calls usage and stops. It captures the single argument into a variable, and then tests that variable: if it is not a directory, it prints an error message, deliberately sending it to standard error rather than standard output, and exits with code one.
+
+Then comes the heart of it. The script uses find to list every regular file under the directory along with its size, pipes that into sort to order them by size, largest first, takes the top five with head, and reads each result in a loop using that careful clear-the-separator, read-with-dash-r idiom. For each one it prints the size, made human-readable with a formatting tool, alongside the path.
+
+What makes this worth studying is how much it demonstrates in one place: the shebang and preamble, a usage function, an argument-count check, a file test with negation, an error correctly directed to standard error, a multi-stage pipeline, and the proper line-reading loop. Save it, make it executable, and run it against a real directory; if anything ever misbehaves, rerun it under bash's trace mode and watch each step unfold.

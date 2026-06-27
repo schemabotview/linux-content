@@ -1,0 +1,9 @@
+The storage stack, a mental model.
+
+Before any commands, let us get the picture straight, because storage on linux is best understood as a stack of layers, each one turning a higher-level abstraction into a lower-level one. When you read a file, the bytes travel down through all of them.
+
+At the very top are files and directories, what you actually work with. Below that is the filesystem, which decides how those bytes are organised into files, where each file's data lives, and what permissions it carries. Beneath the filesystem there can optionally be a logical volume manager layer, which provides flexible software volume management, and below that, optionally again, a raid array, which spreads data across several disks for redundancy. Then comes the partition, a slice of a disk, and below it the block device, which is the kernel's view of the whole disk. And at the very bottom is the physical hardware itself, the s-s-d or hard drive.
+
+The point is that this stack is composable; you can mix and match the layers. A simple desktop might be just hardware, one partition, one filesystem, mounted at the root. A production server might stack several disks into a raid array, then a volume group, then several logical volumes, each with its own filesystem mounted at different places. The kernel does not care which layers you use, because each layer simply presents a block-device interface to the one above it.
+
+There is a nice rule of thumb about direction. When you are inspecting an existing system, work top-down: start at the mount point and follow the layers downward with tools like mount, l-s-b-l-k, and find-mount. When you are building one, work bottom-up: partition the disk, format it with a filesystem, then mount it.

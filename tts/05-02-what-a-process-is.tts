@@ -1,0 +1,9 @@
+What a process actually is.
+
+A process is what you get when a program is running. The program itself, sitting as a file on disk, is just a recipe. The moment the kernel loads it into memory and begins executing it, you have a process.
+
+Every process carries a small bundle of attributes that the kernel keeps track of. It has a process I-D, a unique number identifying it while it is alive. It has a parent process I-D, pointing at the process that started it. It has a user I-D and a group I-D, which determine what it is allowed to read and write. It has the command it is running, together with its arguments. And it has a state: running, sleeping, stopped, or zombie, which we will come back to.
+
+A useful way to picture it is as a conversation. The program is the script on the page; the process is what happens when someone actually reads that script aloud. It has an identity, a parent who started it talking, and a state, whether it is still speaking, paused, or finished.
+
+One process is special: process I-D one. It is the very first program the kernel starts at boot, and on modern linux that is almost always system-d. Every other process descends from it, directly or indirectly. If a process's parent dies while the child is still running, the kernel re-parents the child to process one, which adopts it. Two more things worth holding on to: every command you run becomes a new process, and a pipeline starts one process per stage, all running side by side; and the shell you are typing into is itself just another process, which begins when you log in and ends when you exit.

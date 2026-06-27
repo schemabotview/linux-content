@@ -1,0 +1,9 @@
+Deleting, and the careful use of recursive remove.
+
+The remove command, spelled r-m, deletes a file. There is no trash can, no undo. Once it is gone, it is gone. You can remove a single file or several at once.
+
+To delete a directory and everything inside it, you add the recursive flag, dash r. To push past prompts and force-delete even read-only files, you add dash f, for force. The combination, remove dash r dash f, is genuinely dangerous. The infamous command that tries to delete everything starting from the root of the filesystem has ended real careers and taken down real production servers. Modern remove refuses that exact command by default, but removing a whole important directory still works without complaint, so the danger is very real.
+
+There are habits that protect you. Use the interactive flag, dash i, especially when wildcards are involved, so it asks before each deletion. Before deleting with a wildcard, list first: run the same pattern through the list command to see exactly what would match, and only then recall the command and change list to remove. Be especially careful with variables in a deletion command, because an empty variable can silently turn a targeted delete into a delete of the whole filesystem.
+
+And for directories specifically, there is a safer command, remove-dir, which deletes a directory only when it is already empty. It is the right choice when you mean this directory should be empty, remove it, rather than delete this and everything in it. Remember, linux has no built-in trash like a mac or windows; once you remove something, only specialised recovery tools have any chance, and only sometimes.

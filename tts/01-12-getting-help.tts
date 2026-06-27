@@ -1,0 +1,9 @@
+Getting help.
+
+You do not need to memorise every command in linux. What you need is to know how to look things up, and linux ships with several layers of help that all work locally, with no internet connection required.
+
+The first and most thorough is the manual, reached with the man command. Type man followed by a command name and you get its full reference: every option, examples, and notes. Inside a manual page you move with the space bar to go forward, the b key to go back, a slash followed by some text to search, the n key to jump to the next match, and the q key to quit back to the shell. Manual pages are grouped into numbered sections, and the same name can appear in more than one. Section one is for user commands, section five for file formats, and section eight for system administration. So man five passwd describes the format of the password file, while man one passwd describes the command that changes your password, two completely different topics.
+
+For a quicker reminder, almost every command accepts a dash dash help option. It prints a short summary built right into the program, faster to skim than a full manual page when you just need to jog your memory.
+
+And when you do not even know the command's name, there is apropos. You give it a keyword and it searches the descriptions of every installed manual page, so apropos compress lists every command that has anything to do with compression. There is also info, a more detailed alternative to man used by many of the gnu tools. The natural flow when you are stuck is simple: try dash dash help first, reach for man when you need the full detail, and fall back to apropos when you cannot remember the name at all.

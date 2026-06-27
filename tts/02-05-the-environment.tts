@@ -1,0 +1,9 @@
+The environment, variables that programs inherit.
+
+There are actually two kinds of variables in the shell, and the difference matters. A plain shell variable is visible only inside the shell where you created it. An environment variable is different: it gets inherited by every program the shell launches.
+
+The environment is really just a list of name-and-value pairs that is handed to every command you run. It is how programs discover things like your home directory, your username, where to find other programs, and your preferred text editor. To see the whole list you run env or printenv, which print one variable per line; to see just one, you echo it with a dollar sign in front.
+
+A handful of these come up constantly. Home holds the path to your home directory, and it is what tilde expands to. User holds your username. Shell holds the path to your default login shell, though notice that is your default, not necessarily the shell you happen to be running right now. Editor names the program that tools should open when they need you to edit something. And lang sets your locale, which quietly affects things like sort order and date formats.
+
+The most important one to understand is path. When you type a command like list, the shell does not actually know where the list program lives on disk. Path is a list of directories separated by colons, and the shell searches them in order, running the first matching program it finds. The which command tells you which one it would run, and the type command goes further, also revealing aliases and commands built into the shell itself.

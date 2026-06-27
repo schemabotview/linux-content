@@ -1,0 +1,9 @@
+Playbook two, out of memory.
+
+The symptoms here are processes being killed seemingly at random, the word killed appearing in kernel messages, a sluggish system, and swap thrashing. Let us work through it.
+
+The first step is to see the current state with the free command. The number to watch is available, not free. Available is what can actually be handed out to programs, whereas free understates the true picture because it counts the page cache as used, even though that cache can be reclaimed instantly when needed. So read the available figure.
+
+The second step is to find out what is using the memory. You list processes sorted by resident set size, which is the honest measure of ram actually in use by a process; ignore the virtual size, which is usually much larger and rarely what you care about. The third step is to check the out-of-memory killer's own log in the kernel messages, grepping for phrases like killed process or out of memory. When the kernel runs critically short of memory, it picks a process and kills it, and this log tells you exactly which one it chose and why, which is often the whole answer.
+
+The fourth step is to check swap. If there is no swap configured at all, that is frequently the underlying issue, and adding a swap file, as we covered in the storage notebook, gives the system the breathing room it needs. And the fifth step, for a critical service that keeps getting killed, is to protect it: in its service unit you can adjust its out-of-memory score so the kernel is far less likely to choose it as the victim next time. State, then top consumers, then the kill log, then swap, then protection, that is the sequence.

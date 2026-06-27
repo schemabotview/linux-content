@@ -1,0 +1,7 @@
+Signals, the kernel's notification system.
+
+A signal is a small message the kernel delivers to a process. Each one has a number and a name; signal fifteen, for instance, is sig-term. Signals are how you ask a process to do something asynchronously, out of the blue: to terminate, to reload its configuration, to pause, or to stop.
+
+When a signal arrives, the receiving process has a few choices about how to respond. It can run the default handler, which for most signals simply means terminate; that is what happens if the program made no special arrangements. It can run a custom handler that the program's author wrote, for example treating a hangup as a cue to reload its config. It can ignore the signal entirely, as though it never arrived. Or it can block the signal, queuing it to deal with later.
+
+There is one crucial exception to all that flexibility. Two signals cannot be caught, blocked, or ignored, because the kernel enforces them no matter what the program wants. The first is sig-kill, signal nine, which terminates the process immediately with no chance to clean up; it is the absolute last resort. The second is sig-stop, signal nineteen, which pauses the process immediately, to be resumed later with a continue signal. Every other signal, however, can be handled. If you ever want to see the full list your system supports, the kill command with the dash l flag prints all of them, around thirty named signals, though only a handful matter day to day.

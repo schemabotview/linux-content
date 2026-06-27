@@ -1,0 +1,7 @@
+Input redirection and here-documents.
+
+Just as output can be redirected out of a command, input can be redirected into one. The simplest form is the less-than sign, which feeds the contents of a file in as the command's input. Counting the lines of the password file by redirecting it in does the same job as printing the file and piping it, but without the extra step.
+
+The second form is the here-document, written with two less-than signs followed by a marker word. Everything from there until the marker appears again on its own line is fed to the command as input. It is perfect for sending several lines of text to a command without creating a separate file. The marker word, conventionally written as e-o-f, can be anything you like, as long as it does not appear in your text. By default variables inside a here-document are expanded; if you quote the marker, that expansion is switched off and the text is taken literally.
+
+The third form is the here-string, written with three less-than signs, which is just a compact one-line version of a here-document. All three are genuinely useful for testing a command quickly without making temporary files, and for feeding data into programs that will only read from standard input.

@@ -1,0 +1,7 @@
+Moving and renaming.
+
+Here is something that surprises newcomers: in linux, renaming a file and moving a file are the same operation. There is no separate rename command in the basics; both are done with move, spelled m-v. Give it a source and a new name in the same directory and you have renamed it. Give it a source and a directory and you have moved it. Give it a directory and a new name and you have moved and renamed at once.
+
+There is a nice efficiency to how move works. When the source and destination are on the same filesystem, the move is nearly instant, because it just rewrites a directory entry without touching the data. Only when they are on different filesystems, say moving from your home directory to a u-s-b stick, does it fall back to copying and then deleting, which takes longer for large files.
+
+Move shares the same useful flags as copy: dash i to prompt before overwriting, dash v for verbose, dash n to never overwrite, and dash u to move only when the source is newer. Notice there is no recursive flag for move; moving a directory always brings its contents along, no questions asked. And if you genuinely just want to rename something, you simply move it to a new name within the same directory.

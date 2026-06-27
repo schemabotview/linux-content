@@ -1,0 +1,9 @@
+Playbook one, the disk is full.
+
+The symptoms are familiar: a no-space-left-on-device error, services failing to write their logs, packages refusing to install. Here is the flow to diagnose and fix it.
+
+The first step is to confirm the problem and find which filesystem is affected, using d-f with human-readable sizes. But check two things, not one. If the used percentage is at a hundred on the relevant mount, you have a bytes problem. If, however, d-f with dash i shows the inode usage at a hundred, you have an inode problem instead, too many tiny files, which is common on mail spools and build directories, and the fix is quite different. So always check both bytes and inodes.
+
+For the bytes case, the second step is to find the big stuff. You use d-u, limited to one level deep under the full mount, sorted by size, to see which directories are largest, and then you drill down into the biggest one and repeat. You can also ask find for any files over a hundred megabytes anywhere beneath a directory. If you happen to have the interactive tool n-c-d-u installed, it makes this hunt far faster.
+
+The third step is the classic gotcha: deleted but still-held files. When a process keeps a file open after it has been deleted, the space is not actually freed until that process lets go, so the file is invisible to d-u yet still counted by d-f. You find these by listing open files and grepping for the word deleted, and the usual culprits are services that rotate their own logs without reopening them. The fix is to restart the offending service. And finally, if it was the inode case, you hunt for the directories holding the most files and clean those out. Confirm, locate the big consumers, check for deleted-but-held files, and handle inode exhaustion separately, that is the whole playbook.

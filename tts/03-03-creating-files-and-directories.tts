@@ -1,0 +1,7 @@
+Creating files and directories.
+
+To create an empty file, you use touch. Touch was originally built to update a file's timestamps, and it still does that; touching a file that already exists just bumps its modification time. But its side effect of bringing an empty file into existence when none is there is what you will use it for most.
+
+To create a directory, you use make-dir, spelled m-k-d-i-r. On its own it makes a single directory. If you want a whole chain of nested directories in one step, you add the dash p flag, where p stands for parents. Without it, make-dir complains if any directory along the path is missing; with it, it quietly creates every missing parent. It also does not complain if the directory already exists, which makes it safe to use inside scripts.
+
+A few practical points. Both touch and make-dir accept several names at once, so you can create three files, or three directories, in a single command. Linux filenames are case-sensitive, so a capitalised report and a lowercase report are two genuinely different files, which often catches out people coming from windows or a mac. And while spaces in filenames do work if you quote them, the convention on linux is to avoid spaces altogether and use dashes or underscores instead.

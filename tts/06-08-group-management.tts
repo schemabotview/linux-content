@@ -1,0 +1,7 @@
+Group management.
+
+The group commands mirror the user commands you just met. Group-add creates a new group, optionally with a specific group I-D. Group-mod modifies an existing group: it can rename it or change its group I-D. And group-del deletes a group, though only if no user still has it as their primary group.
+
+Alongside these is g-passwd, which manages who belongs to a group without going through user-mod. With dash a it adds a user to a group, with dash d it removes one, and with dash capital-m it sets the entire member list at once. It can even, with dash capital-a, appoint a user as an administrator of the group, allowing them to add and remove members without needing full sudo.
+
+So there are two equivalent ways to add someone to a group: g-passwd dash a, or user-mod dash a dash capital-g, remembering always to append. But there is one more thing that catches people out, and it is worth stressing. After you add a user to a new group, that user must log out and back in before the new membership takes effect in their shell. The reason is that group memberships are loaded at login; an already-running shell does not see new groups until it re-reads the user's identity, which only happens at login. The workaround, if they cannot log out right then, is the new-grp command, which starts a fresh shell with the chosen group already active.

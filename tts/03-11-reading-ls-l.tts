@@ -1,0 +1,9 @@
+Reading a long listing, character by character.
+
+A single line from a long listing packs in a remarkable amount of information, and once you can read it fluently, a lot of linux stops being mysterious. Let us take a typical line apart from left to right.
+
+The very first character is the file type; a dash here means a regular file. Then come nine permission characters in three groups of three. The first group is the owner's permissions, the second is the group's, and the third is everyone else's. So read-write-dash for the owner means they can read and write but not execute; read-dash-dash for the group and for other means each can only read.
+
+After the permissions comes a number, the count of hard links pointing at this file. Then two names: the owner of the file, and then its group. After that the size in bytes, then the date and time it was last modified, and finally the filename itself.
+
+So a line might tell you: this is a regular file, the owner can read and write it, the group and everyone else can only read it, one link points to it, it is owned by the ubuntu user and the ubuntu group, it is so many bytes, last changed on such a date, and it is called report. A directory looks much the same but begins with the letter d and usually shows read-write-execute for the owner and read-execute for everyone else, meaning others can look inside and pass through but not change anything. Spend a minute reading real lines from a long listing of slash e-t-c until this clicks; it is the most important piece of ground truth you will read in linux.

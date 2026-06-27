@@ -1,0 +1,9 @@
+Keyboard shortcuts.
+
+The shell's command line is really a tiny text editor, and most beginners move around it one character at a time with the arrow keys. People who live in the shell use a set of shortcuts instead, and learning them pays back almost immediately.
+
+Two of them jump the cursor: control-a leaps to the start of the line, control-e to the end. A few delete text: control-u wipes everything from the cursor back to the start, control-k wipes everything forward to the end, and control-w deletes just the word before the cursor. Whatever you delete with those is not gone; control-y pastes it back. You can also hop word by word with alt-b and alt-f.
+
+A handful more are worth knowing. Control-l clears the screen instantly. Control-c abandons the line you are typing, or interrupts a command that is running. Control-d signals end of input, and on an empty prompt it logs you out of the shell.
+
+The one I want to single out is alt, then a period. It pastes the last argument of the previous command. So after you make a long directory path, the very next command can reuse that whole path just by tapping alt-period, with no retyping. Tap it again and again to walk back through the last arguments of earlier commands. These are the default emacs-style bindings that almost everyone uses, so spend five minutes drilling them now and you will save hours over a career.

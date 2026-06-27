@@ -1,0 +1,9 @@
+The seven file types.
+
+When you run a long listing, the very first character on each line tells you what kind of thing you are looking at. Linux recognises seven types in total, and learning to read that first character is a small but genuinely useful skill.
+
+A dash means a regular file: text, binaries, images, documents, the great majority of what you deal with. The letter d means a directory, a folder that holds other files. The letter l means a symbolic link, a pointer to another file. Those three cover almost everything you will meet.
+
+The other four are for the curious. The letter c is a character device, an unbuffered byte stream like a terminal, or the null device. The letter b is a block device, fixed-size random-access storage like a disk. These two live in slash dev and are how userspace talks to hardware, while the kernel does the real work; reading from the random device gives you random bytes, and writing to the null device quietly discards everything.
+
+The letter s is a socket, a communication endpoint between processes, the way local services like a database server or docker talk to one another. And the letter p is a named pipe, a persistent pipe that lives on the filesystem, rare in everyday use but occasionally seen in scripted setups. So remember: the file command tells you what is inside a regular file, while that first character of a long listing tells you the type as the kernel itself sees it.

@@ -1,0 +1,13 @@
+Getting your own linux to practise on.
+
+You can read about linux all day, but you only really learn it by typing. So before anything else you need a linux prompt of your own to play with. There are several common ways to get one, ranging from very easy to a little more involved.
+
+The first and most recommended option is a cloud virtual machine. You rent a small linux server from a provider like digital ocean, amazon lightsail, lin-ode, or hetzner, for just a few dollars a month. You connect to it remotely and you have a real linux system that you can break and rebuild as often as you like. The only downsides are that it needs an internet connection and costs a little money.
+
+The second option is multipass, a free tool from canonical that gives you a one-command ubuntu machine right on your laptop. There is no signup, and it runs on mac, windows, and linux. It is fast, isolated, and cannot harm your host machine; the trade-off is that it only runs ubuntu and uses a few gigabytes of memory.
+
+If you are on windows ten or eleven, the third option is windows subsystem for linux, version two. It runs a real linux kernel right alongside windows, with files shared between the two, and it is almost frictionless to set up.
+
+The fourth option, if you already have docker, is to launch a throwaway container. It is instant and disposable, but it has no init system by default and keeps nothing once you exit unless you deliberately attach storage. And finally you can run a full virtual machine in virtual-box or vee-em-ware, which is heavier but gives you a complete graphical desktop.
+
+For this course, the smoothest path is multipass if you are on a laptop, or a cheap cloud virtual machine if you want the most authentic experience. Whatever you pick, stick with it. Switching environments midway through is just a distraction.

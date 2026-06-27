@@ -1,0 +1,9 @@
+Change mode, changing permissions.
+
+The command to change permissions is change-mode, spelled c-h-m-o-d, and it offers two equivalent ways to express what you want. It is worth learning to read both, because you will meet both out in the wild.
+
+The first is the symbolic form, which reads almost like a sentence: a who, an operator, and a what. The who is u for user, g for group, o for other, or a for all of them. The operator is a plus to add a permission, a minus to remove one, or an equals sign to set the permissions to exactly what follows. And the what is some combination of r, w, and x. So adding execute for the owner, or removing write from group and other, or granting read to everyone, all read naturally in this form.
+
+The second is the numeric, or octal, form, three digits, one per class. Each digit is a sum: four for read, two for write, one for execute, and zero for nothing. So seven is read plus write plus execute, six is read plus write, five is read plus execute, and four is read only. You write one digit for the user, then the group, then other.
+
+A handful of combinations come up so often they are worth memorising. Octal seven-five-five is the classic for programs and public directories: the owner can do everything, everyone else can read and run. Octal six-four-four is the everyday file: the owner can edit, others can only read. And octal seven-zero-zero and six-zero-zero keep a directory or a file completely private to the owner. Two flags help: dash capital-r applies the change recursively through a whole tree, and dash v reports what it changed. One common trap, though: applying a single recursive mode to a mix of files and directories usually makes all your plain files executable, so the safe pattern is to set directories and files separately, which is a perfect job for the find command coming up next.

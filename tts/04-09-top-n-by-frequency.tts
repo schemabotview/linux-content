@@ -1,0 +1,9 @@
+The top-N by frequency idiom.
+
+Here is a pipeline pattern that comes up so often it is worth memorising as a single shape. The problem it solves is this: given a stream of items, find the most common ones. The pipeline is sort, then uniq dash c, then sort dash r-n, then head.
+
+Let us read it left to right. The first sort brings identical items next to each other, which is the setup uniq needs to see them. Uniq dash c then collapses each run of duplicates into a single line, prefixed with the count of how many times it appeared. The second sort, with dash r-n, sorts those lines by that count, numerically and in reverse, so the most frequent rise to the top. And head keeps just the top few.
+
+This one idiom answers a whole family of questions. What are the most common login shells on this system? Which I-P addresses appear most often in a web access log? Which directories hold the most files? What are the top error messages in the system log? They are all the same shape underneath.
+
+A concrete example: to find the most popular shells on the machine, you extract the shell field from each line of the password file with awk, then feed it straight into sort, uniq dash c, sort dash r-n, and head. The shell field gets counted, the counts get sorted highest first, and you see the winners. You will write countless variations of this pipeline over your career, so commit the shape to memory.

@@ -1,0 +1,9 @@
+The boot sequence, from power-on to login prompt.
+
+Between pressing the power button and seeing a login prompt, four well-defined stages happen in order. Knowing them is what lets you diagnose a machine that will not boot, so let us walk through them.
+
+The first stage is the firmware, which lives on a chip on the motherboard and runs the moment you power on. There are two kinds. The older one is the b-i-o-s, the basic input-output system, which loads the first five hundred and twelve bytes of the boot disk, the master boot record, and jumps to the code there. The modern replacement is u-e-f-i, the unified extensible firmware interface, which reads a small e-f-i system partition holding bootloader files and runs the one named in its boot menu. Almost all hardware since around twenty twelve supports u-e-f-i. The firmware also runs the power-on self-test, a quick hardware check, before handing off.
+
+The second stage is the bootloader, which on virtually every linux system is grub, the grand unified bootloader. Its job is to present a menu if more than one system is installed, load the chosen kernel into memory, and start it. Its configuration is generated from a file under slash e-t-c, and you regenerate it with a distribution command rather than editing the final file by hand.
+
+The third stage is the kernel together with the initramfs, a small temporary root filesystem held in memory. The kernel probes the hardware, and the initramfs contains just enough drivers to find and mount the real root filesystem. Once that is mounted, the fourth and final stage begins: the kernel starts systemd as process one, and systemd brings up all the services, working toward a target, until you arrive at the login prompt. Four stages, then: firmware, bootloader, kernel and initramfs, and systemd. When a boot fails, knowing which stage it failed in tells you where to look.

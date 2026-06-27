@@ -1,0 +1,9 @@
+Export, promoting a variable to the environment.
+
+A plain assignment creates a shell variable that only the current shell can see. To make that variable visible to the programs you launch, you export it. You can export a variable you already created, or set its value and export it in a single line.
+
+You can prove the difference to yourself. A shell variable shows up when you list variables with set, but not when you list the environment with env. Once you export it, it appears in both.
+
+Here is the key idea about how this travels. When you launch a new program, it receives a copy of the environment, not the original. Any change the child makes to its own environment never flows back to the parent. This is exactly why a variable you set inside a script does not survive after the script finishes: the script ran in its own shell, and that shell took its environment with it when it exited.
+
+This becomes important for configuring your shell. Startup files like the bash-r-c and profile files in your home directory are read when the shell starts, and they typically export the variables you want present in every session, so your settings follow you from one login to the next.

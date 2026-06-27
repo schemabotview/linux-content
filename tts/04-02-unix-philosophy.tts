@@ -1,0 +1,7 @@
+The unix philosophy.
+
+Most operating systems hand you a few large programs that try to do everything at once. A word processor that also checks grammar, merges mail, and embeds spreadsheets. Linux takes the opposite approach, and it is worth pausing on, because it shapes every tool in this notebook.
+
+The idea, articulated by doug mc-ilroy back in nineteen seventy-eight, is this: write programs that do one thing and do it well, write programs that work together, and write programs that handle text streams, because text is a universal interface. Every tool we are about to meet is a small program with a narrow job. Grep filters lines by pattern. Sed rewrites lines. Awk treats lines as records of fields. Cut pulls out columns. Sort orders lines, and uniq collapses adjacent duplicates. Translate swaps characters, word-count counts, find locates files, and tar bundles them.
+
+None of these is impressive on its own. The power comes from chaining them together with pipes, which lets you do extraordinarily complex text manipulation in a single line. The linux pipeline is one of the most powerful and underrated programming environments ever built, and after the first three notebooks you already have everything you need to start writing them. This notebook teaches the individual tools; later we return to combining them into full pipelines and scripts.

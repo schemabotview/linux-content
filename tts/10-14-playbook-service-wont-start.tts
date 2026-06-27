@@ -1,0 +1,9 @@
+Playbook five, a service will not start.
+
+The symptom is that starting a service returns an error, or its status shows failed. The good news is that systemd usually hands you the answer quickly if you know where to look.
+
+The first step is simply to read the status. Most of the time, the handful of recent log lines that system-control status prints already contain the cause. Learn to recognise the common messages. Permission denied means the service cannot access some file, directory, or socket. Address already in use means another process is holding the port it wants. No such file or directory points at a wrong path, a missing program, or a missing config file. And a parse or syntax error means a mistake in a configuration file.
+
+If the status is not enough, the second step is the full logs for that unit, through the journal filtered by the unit name, perhaps the last hundred lines, or followed live in another window while you attempt the start again. You can also check whether any other units are in a failed state, in case the problem is a dependency.
+
+The third step is to test the configuration, because many services ship a syntax-check command, the web servers and s-s-h among them; if that check fails, it names the exact file and line of the error. And the fourth step, when the configuration looks fine but the service still will not run, is to run the program by hand with the same arguments systemd would use. You get that exact command from system-control cat, which shows the full unit including the start command, and running it directly often surfaces an error that the service had been hiding. Read the status, read the full logs, test the config, then run it by hand, in that order.

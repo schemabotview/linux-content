@@ -1,0 +1,9 @@
+Viewing file contents.
+
+There are several tools for reading a file, and picking the right one for the job matters. The simplest is cat, short for concatenate, which prints a whole file straight to your terminal. That is fine for something small, a few dozen lines, but do not point it at a fifty-thousand-line log file or it will flood your screen. Given two files, cat prints them both, glued together, which is where its name comes from.
+
+For anything large, reach for less, an interactive pager. Inside it you move with the space bar to go forward, the b key to go back, a slash to search, the n key for the next match, and q to quit. The clever thing about less is that it does not load the whole file into memory; it only reads the part you are currently looking at, so it can open a ten-gigabyte log instantly.
+
+When you only want the ends of a file, head prints the first ten lines and tail prints the last ten, and both take a dash n flag to change that count. Tail has one killer feature: with the dash f flag, for follow, it keeps printing new lines as they are appended, which is the standard way to watch a log file live. There is also an older, simpler pager called more, but less is, by a deliberate pun, more than more, so just use less.
+
+Finally there is the file command, which is not for reading a file but for identifying it. Linux does not trust file extensions, so file peeks at the first few bytes, the so-called magic number, and tells you what is really inside, whether that is an executable, plain text, or a p-n-g image.

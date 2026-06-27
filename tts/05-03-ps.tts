@@ -1,0 +1,9 @@
+P-s, viewing processes.
+
+The p-s command, short for process status, gives you a snapshot of what is running at this instant. It does not update; for a live, refreshing view you use top or h-top, which we meet next. P-s captures the moment and prints it.
+
+For historical reasons, p-s understands two different flag styles, and both are in common use. The b-s-d style uses flags with no dash, and the classic combination is p-s, a-u-x: a shows the processes of all users, u gives a user-friendly layout with see-pee-you and memory columns, and x includes background processes that are not attached to any terminal. The system-five style uses flags with a dash, and its classic combination is p-s dash e-f: dash e shows every process, and dash f gives the full format with extra columns. The two produce almost the same information, so pick one and stick with it.
+
+The columns you will read most are these. There is the process I-D and its parent's I-D. There is the user who owns it. There is the percentage of see-pee-you and the percentage of memory it is using. There is resident set size, the actual ram in use, and virtual size, the larger address space it has mapped. There is the state letter, the controlling terminal or a question mark if it has none, the accumulated see-pee-you time, and finally the command itself.
+
+When you want exactly the columns you care about, p-s takes a dash e-o flag where you list the column names in any order you like. And to see the family relationships, you can add a forest option to draw the parent-child tree inline, or use the dedicated p-s-tree command, which lays the whole hierarchy out visually.

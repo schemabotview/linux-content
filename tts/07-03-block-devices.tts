@@ -1,0 +1,7 @@
+Block devices and how linux names them.
+
+A block device is the kernel's abstraction for any storage device: a hard disk, an s-s-d, a u-s-b stick, a raid array, a logical volume, anything that reads and writes in fixed-size blocks, usually four kilobytes at a time. They all appear as special files under the slash dev directory.
+
+There are several naming conventions you will meet, and recognising them saves a lot of confusion. Traditional sata, s-c-s-i, and u-s-b disks are named s-d followed by a letter: s-d-a for the first disk, s-d-b for the second, and so on, with a number appended for each partition, like s-d-a-one. Modern solid-state drives on the n-v-m-e bus follow a different pattern, something like n-v-m-e-zero-n-one for the first drive, with a p and a number for partitions. Inside virtual machines and cloud instances you will often see v-d-a, the virtio naming. And there are others: the device-mapper names under slash dev slash mapper for logical volumes and encrypted devices, and the m-d names for software raid arrays.
+
+One crucial warning underlies all of this. Device names can change between boots on a machine with several disks. If you unplug the second disk and reboot, what was s-d-b might come back as s-d-a. That instability is exactly why you should never refer to a disk by its device name in the persistent mount configuration; instead you use a u-u-i-d or a label, which we come to shortly, because those stay fixed no matter how the device is named.

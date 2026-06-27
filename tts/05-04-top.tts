@@ -1,0 +1,7 @@
+Top, the live view.
+
+Where p-s gives you a single snapshot, top gives you a live, refreshing view of the system. Type top and you get a screen that updates every few seconds, showing see-pee-you usage, memory, and the busiest processes, sorted by see-pee-you by default.
+
+The top of the screen is a summary: the load average, a count of tasks, a breakdown of see-pee-you usage, and how memory is being used. Below that is the table of processes. The real value of top comes from the keys you can press while it is running. Press capital-p to sort by see-pee-you, capital-m to sort by memory, and capital-t to sort by accumulated time. Press one to toggle between an aggregate see-pee-you line and a line per core. Press c to show the full command line, and u to filter down to a single user. You can even act from inside top: press k to send a signal to a process, or r to renice it and change its priority. Press q to quit, and capital-w to save your current layout so it comes back next time.
+
+There is also a non-interactive mode, called batch mode, for capturing top's output into a log or a script. You run top with the dash b flag for batch and dash n with a number to say how many iterations you want, often just one. That gives you a plain snapshot of the summary and the busiest processes, with no interactive screen, which is exactly what you need inside a scheduled job.

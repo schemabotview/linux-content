@@ -1,0 +1,9 @@
+The permissions model, who can do what.
+
+Linux is a multi-user system right down to its foundations, so every single file carries an owner, a group, and a set of permissions that decide what the owner, the group, and everyone else is allowed to do. The model splits neatly into three classes and three actions.
+
+The three classes answer the question, who is asking? The user is the file's owner. The group is the set of people who belong to the file's group. And other is simply everyone else, anyone who is neither the owner nor in the group.
+
+The three actions answer, what are they trying to do? For a file, read means view the contents, write means modify or overwrite them, and execute means run the file as a program or script. For a directory the same three words shift meaning in an important way. Read lets you list the names inside. Write lets you create, delete, or rename files within it. And execute lets you enter the directory and reach the files inside it.
+
+That last point catches people out constantly, so hold on to it: execute on a directory means traversable. A directory you cannot execute is effectively locked to you; even if you can read its list of names, you cannot change into it or touch anything within. Put the three classes and three actions together and every file carries nine permission bits, owner read-write-execute, group read-write-execute, other read-write-execute, and you will see exactly those nine in every long listing.

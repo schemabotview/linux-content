@@ -1,0 +1,7 @@
+The signals you will actually use.
+
+Out of the thirty or so signals, a small handful cover almost everything you will ever do, so let us focus on those. The most important is sig-term, signal fifteen. It is the polite request to shut down, and it is what the kill command sends by default. The process is asked to exit cleanly, and because it is catchable, a well-written program can flush its logs, close its connections, and tidy up before it goes.
+
+Next is sig-kill, signal nine, the last resort. It kills the process instantly, with no opportunity to clean up at all, and you reach for it only when sig-term has been ignored. Then there is sig-int, signal two, which is what control-c sends from the keyboard; its intent is the same as sig-term but tied to interactive use. And sig-hup, signal one, originally meant a modem had hung up, but by convention it is now used to tell a long-running service to reload its configuration without fully restarting.
+
+A few more round out the set. Sig-quit, sent by control-backslash, terminates the process and produces a core dump for debugging. Sig-stop pauses a process and cannot be caught, while sig-t-stop, sent by control-z, also pauses but can be overridden by the program, and sig-cont wakes a stopped process back up. Finally, sig-user-one and sig-user-two are application-defined slots that many daemons use for their own purposes, like rotating logs. But the three you will send constantly are these: sig-term to ask politely, sig-kill when that is ignored, and sig-hup to make a daemon reread its config.

@@ -1,0 +1,9 @@
+Pluggable authentication modules, a preview.
+
+Pam, the pluggable authentication modules framework, is what handles authentication on modern linux. Whenever you log in, or run s-u or sudo, or use any service that needs to verify that a user really is who they claim to be, that program does not implement the check itself. It calls pam.
+
+The benefit of this design is enormous: changing how authentication works becomes a configuration change rather than a code change. Do you want two-factor authentication? Drop in a pam module. Do you want to authenticate against a corporate directory like l-dap or active directory? Another pam module. Do you want to enforce password complexity? A pam module again. The programs themselves never change.
+
+The configuration lives under slash e-t-c slash pam dot d, with one file per service: one for console login, one for s-s-h, one for sudo, and so on. Each file is a small list of rules, and the rules are grouped into four management categories. The auth category verifies identity, proving you are who you say. The account category checks account status, asking whether this account is allowed to log in right now, considering things like expiry or time-of-day restrictions. The password category governs password changes, including complexity and history rules. And the session category sets up and tears down the session, doing things like mounting the home directory and logging the login.
+
+At this level you will rarely write pam configuration from scratch. But you might read the s-s-h file to understand why a login is being refused, adjust the password-quality settings to demand stronger passwords, or add two-factor authentication by installing a module and adding a line. One critical warning to finish on: a pam misconfiguration can lock you out completely, so always keep a root session open while editing these files, and have a recovery path ready.

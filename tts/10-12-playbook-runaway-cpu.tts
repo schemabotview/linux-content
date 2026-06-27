@@ -1,0 +1,9 @@
+Playbook three, a runaway process pinning the see-pee-you.
+
+The signs are a climbing load average, fans spinning up, and a system that feels unresponsive. The flow has three stages: find it, understand it, and control it.
+
+First, find the culprit. Top, sorted by see-pee-you, or the friendlier h-top, shows you immediately which process is eating the processor. For a one-shot snapshot you can list processes sorted by see-pee-you percentage and take the top few.
+
+Second, understand what it is actually doing. Once you have its process I-D, you can drill in. The strace tool attaches to the process and shows the system calls it is making; a process spinning in a tight loop, repeatedly opening the same file, reveals its bug almost instantly this way. You can also list its open files and sockets, read its detailed status, recover its full command line, and see which directory it is running from, all through the process's entry under the proc filesystem.
+
+Third, control it, and you have a graduated set of options. You can lower its priority with renice, which does not kill it but simply gives everything else more of the see-pee-you. You can drop its disk priority into the idle class. You can pause it outright with a stop signal, which is wonderful when you want to inspect it without it consuming any more processor, and later resume it with a continue signal. And if it must go, you escalate politely, sending the terminate signal first, waiting a few seconds, and only then the forceful kill. Find it, understand it, control it, in that order.

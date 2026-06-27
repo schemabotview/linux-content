@@ -1,0 +1,7 @@
+What systemd is, in one minute.
+
+Systemd is the init system, process one, on every major modern linux distribution. It is also more than that: it is a whole suite of related daemons, including journal-d for logs, log-in-d for login sessions, network-d for networking, and resolved for dee-en-ess. But its core job is managing the system's services.
+
+What does it actually do? It starts services in dependency order, running them in parallel wherever it can to speed up boot. It manages the whole lifecycle of a service, restarting it if it crashes, running it on a schedule, or activating it only when something needs it. It tracks each service's processes using the kernel's control groups, so that stopping a service reliably stops all of its child processes too, with none left orphaned. It gathers everyone's log output into a single journal. And it handles boot targets, which describe what ought to be running for, say, a graphical desktop versus a plain server.
+
+Everything systemd manages is called a unit, and units are described by simple text files. Those files live in two main places, and the distinction matters. The vendor-supplied units, dropped in by the packages you install, live under slash lib or slash you-ess-are slash lib, and you should not edit them. Your own units, and your overrides of the vendor ones, live under slash e-t-c slash systemd slash system, which takes priority. The rule of thumb is simple: you read the existing units under slash lib, and you write your own new units and overrides under slash e-t-c.

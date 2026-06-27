@@ -1,0 +1,9 @@
+Pipes, the most important character in the shell.
+
+A pipe, written as the vertical bar, takes the standard output of one command and feeds it straight into the standard input of the next. It is the operator that turns linux's small, focused tools into something far more powerful than any of them alone.
+
+Picture listing the e-t-c directory and piping the result into a command that counts lines. Instead of printing the listing to your screen, the output flows into the counter, and what you get back is simply the number of entries. And you are not limited to two: you can chain as many commands as you like, each one's output becoming the next one's input, so you might list a directory, sort the result, and then keep only the first few lines, all in one line.
+
+One important detail: a pipe connects only the standard output of the left side to the standard input of the right side. The error stream is not piped; it still goes to your terminal unless you redirect it separately. This is the whole unix philosophy in a single character: write small programs that each do one thing well, read from standard input, and write to standard output, then compose them with pipes to solve bigger problems.
+
+There is one rule about success worth filing away. By default the exit status of a whole pipeline is just the exit status of its last command, so a pipeline can report success even if an earlier stage failed. If you need a pipeline to fail whenever any stage fails, you can turn on an option called pipefail, which we return to when we talk about scripting.

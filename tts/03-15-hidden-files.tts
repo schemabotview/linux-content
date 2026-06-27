@@ -1,0 +1,7 @@
+Hidden files and dotfiles.
+
+A file or directory whose name begins with a dot is treated as hidden, meaning it does not appear in a plain listing. This is not a security feature at all; it is simply a convention. The all flag, dash a, reveals them, while an ordinary listing leaves them out.
+
+The convention exists for a good reason. Almost all of linux's configuration is per-user, it lives in your home directory, and if it showed up in every listing it would bury your actual files in clutter. So it is tucked away behind the leading dot. If you take a peek into a home directory with hidden files shown, you will meet the regulars: the bash-r-c that runs every time you open a shell, the profile that runs when you log in, the bash-history that records every command you have typed, the s-s-h directory holding your keys, and the config, local, and cache directories that modern applications use.
+
+These are universally known as dotfiles, and many experienced linux users keep theirs in a public git repository, which is how they carry the exact same environment from one machine to the next; searching for dotfiles online turns up thousands of examples. Two practical notes to finish. The all flag shows hidden files, and combined with long format it is the form you will reach for most when investigating a home directory. And you will also notice a single dot and a double dot in that output; those are not hidden files at all but the current directory and the parent directory, which is exactly why change-directory dot dot walks you one level up.

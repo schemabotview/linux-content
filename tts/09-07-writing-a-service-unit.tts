@@ -1,0 +1,9 @@
+Writing a basic service unit.
+
+Now let us write a service of our own. A service unit file is in the i-n-i style, with sections named in square brackets and key-equals-value lines beneath them, and it has three sections, each with a clear job.
+
+The first section is the unit section, which holds general information and dependencies. Description gives a human-readable name shown in the status output. After and before control ordering; saying after the network-online target, for instance, means do not start me until the network is up. And wants and requires express dependencies, where wants is a soft wish, start if you can, while requires is a hard demand that fails this unit if its dependency fails.
+
+The second section is the service section, which says how to run the program, and its most important key is type. The default, simple, means the command you give is itself the main long-running process. Forking is for old-style daemons that fork a child and exit. And one-shot is for a task that runs once and finishes, often paired with a setting that remembers it as active afterward. Within this section, exec-start gives the command to run, and it must be an absolute path. Restart is the killer feature, with values like on-failure or always that automatically bring a crashed service back, after a delay you can set. You can also run the service as a specific user and group rather than root, set its working directory, and define environment variables, either inline or loaded from a file.
+
+The third section is the install section, and it answers the question of what happens when you enable the unit. The wanted-by key, typically naming the multi-user target, is what wires the service into normal boot, so that enabling it makes it start automatically. Three sections, then: unit for identity and dependencies, service for how to run it, and install for how it hooks into boot.

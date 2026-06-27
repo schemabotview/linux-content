@@ -1,0 +1,9 @@
+Links, hard and symbolic.
+
+A link lets a single file have more than one name, or lets one file act as a pointer to another. Linux supports two kinds, and the difference is worth understanding clearly.
+
+A hard link, made with the l-n command, is a second directory entry that points at the very same underlying data. Both names are completely equal; there is no original and no copy. Change the content through one name and the other sees the change instantly. Delete one name and the data survives, as long as at least one name still points to it.
+
+A symbolic link, or symlink, made with l-n and the dash s flag, is different. It is a tiny separate file whose entire content is just the path to another file. When you read the symlink, the kernel quietly follows it to the target. The practical differences are these: a hard link cannot point at a directory and cannot cross from one disk to another, while a symlink can do both. But a symlink breaks if its target is renamed or moved away, because it only stores a path, whereas a hard link keeps working because both names are equal.
+
+In day-to-day life, symbolic links are what you will use almost all the time, and they are everywhere in linux. The slash bin directory is often a symlink into slash you-ess-are, package managers point a generic python name at a specific version through a symlink, and many people keep their shell configuration as a symlink into a dotfiles repository. You can spot one in a long listing by the letter l at the start of the line and the little arrow showing what it points to, and the read-link command resolves a chain of symlinks all the way to its final target.

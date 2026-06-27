@@ -1,0 +1,7 @@
+Drop-ins, modifying a vendor unit without editing it.
+
+Sooner or later a package will ship a service file that you want to tweak, perhaps to raise a memory limit, add an environment variable, or change the restart policy. The wrong way is to edit the vendor file directly, because the next package update will simply overwrite your changes. The right way is a drop-in: a small override file that systemd merges on top of the vendor unit.
+
+The easy way to create one is system-control edit, naming the service. This opens your editor on a fresh, initially empty override file in a directory named after the unit under slash e-t-c. In it, you write only the sections and keys you want to change, nothing more. Save and exit, and systemd merges your override with the vendor unit, overriding any matching keys and adding any new ones. It even runs the daemon-reload for you automatically. You will still need to restart the service for the new configuration to actually take effect.
+
+To check the result of all this merging, system-control cat shows the vendor file and your drop-ins concatenated together, while system-control show displays the effective, final values. And if you ever want to undo your changes entirely, system-control revert deletes the drop-in and returns the unit to its shipped state. For the exam, and for sane administration generally, prefer drop-ins over full edits: they survive package updates, they are easy to audit because they contain only your changes, and they are trivial to remove.

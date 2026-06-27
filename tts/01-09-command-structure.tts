@@ -1,0 +1,9 @@
+Command structure, the anatomy of a command.
+
+Almost every command you will ever type follows the same three-part shape: the command itself, then its options, then its arguments.
+
+The command is simply the program you want to run, list, copy, grep, and so on. The options, also called flags or switches, change how that program behaves. Short options are a single dash followed by one letter, like dash l. Long options are two dashes followed by a whole word, like dash dash all. The arguments are the things the command acts on, usually filenames, paths, or pieces of text.
+
+Take list dash l, then slash e-t-c slash passwd. List is the command. Dash l is an option asking for long format. And slash e-t-c slash passwd is the argument, the file to list. Or take copy dash r, then a source folder, then a destination: copy is the command, dash r is the recursive option, and the two paths are the source and destination arguments.
+
+Short and long forms often mean the same thing; list dash a and list dash dash all do exactly the same job. Some options even carry their own value, like a max-count option set to five. And one more piece of punctuation worth knowing: a pair of dashes on their own marks the end of the options. Anything after it is treated as an argument even if it begins with a dash, which is how you search for a literal dash without confusing the command.

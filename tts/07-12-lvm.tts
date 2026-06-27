@@ -1,0 +1,9 @@
+Logical volume management.
+
+The logical volume manager, almost always called l-v-m, sits between your partitions and your filesystems, and it adds a layer of flexibility that plain partitions simply cannot offer. It lets you treat several physical disks or partitions as one big pool of storage, and then carve flexible logical volumes out of that pool, which you can resize on the fly without losing data.
+
+The model has three layers, so let us name them carefully. At the bottom are physical volumes: real partitions or disks that you mark for l-v-m use. These are aggregated into a volume group, which is one large pool of storage. And from that pool you carve out logical volumes, which behave just like partitions, each one then formatted with a filesystem. So the flow is physical volumes, gathered into a volume group, sliced into logical volumes, topped with filesystems.
+
+The features this unlocks are the whole point. You can resize a logical volume without even unmounting it, growing it while it is in use. You can add more disks to expand the pool whenever you run low. You can take instant snapshots, point-in-time copies for backups or risky changes. You can span a filesystem across several disks without raid. And you can even move data off a failing disk while the system stays online.
+
+The standard creation workflow follows the three layers bottom-up. You mark your partitions as physical volumes with p-v-create, combine them into a volume group with v-g-create, and then carve out logical volumes with l-v-create, giving each a size and a name, or telling it to use all the remaining free space. After that you format each logical volume with a filesystem and mount it, just like any partition, and add it to the filesystem table for persistence. To inspect what exists at each level, there is a matching show command: p-v-s for physical volumes, v-g-s for volume groups, and l-v-s for logical volumes, each with a more detailed display variant.

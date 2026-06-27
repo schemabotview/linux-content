@@ -1,0 +1,7 @@
+U-u-i-d and label, the stable way to identify filesystems.
+
+We have warned twice now that device names like s-d-b can change between boots, so let us see the proper fix. Instead of a device name, you identify a filesystem by its u-u-i-d, a universally unique identifier assigned to it when it is created. The beauty of a u-u-i-d is that it never changes, even if the device is renamed or moved to a different port, so a mount that refers to it always finds the right filesystem.
+
+To see the u-u-i-ds and labels on a system, you use b-l-k-i-d, which lists them for every device, or l-s-b-l-k with a chosen set of columns for a neat table. Each device shows its long u-u-i-d string and its filesystem type. In the persistent mount configuration you then write u-u-i-d, an equals sign, and that identifier in place of the device name.
+
+There is also a friendlier alternative: a label, a human-readable name you give a filesystem. You can set one when you format the filesystem, or change it afterwards with a small per-filesystem tool, and then refer to it in the mount configuration by writing label, an equals sign, and the name. So which should you prefer, u-u-i-d or label? The u-u-i-d is the safe default, because it is globally unique and can never accidentally collide with another. Labels read more nicely but you have to keep them unique yourself. For the exam, know both forms, and remember the golden rule: raw device names like s-d-b-one should not appear in the persistent mount configuration of a production system.

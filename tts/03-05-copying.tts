@@ -1,0 +1,9 @@
+Copying with copy.
+
+To copy a file, you use copy, spelled c-p, giving it a source and a destination. If the destination is a directory, the file keeps its name; if it is a new name, the file is copied and renamed in one step. You can also list several files at once and copy them all into a directory.
+
+To copy a directory along with everything inside it, you need the recursive flag, dash r. Without it, copy refuses and tells you it is omitting the directory; that refusal is deliberate, a guard against a common mistake.
+
+Several flags make copy safer and more informative. Dash i, for interactive, prompts before overwriting an existing file, and it is a good habit to build. Dash v, for verbose, prints each file as it is copied, which is reassuring on a big copy. Dash p preserves the original's timestamps, ownership, and permissions instead of resetting them. Dash n never overwrites, skipping files that already exist. And dash u only copies when the source is newer than the destination, which is handy for incremental backups.
+
+One warning worth repeating: by default copy overwrites the destination silently. If a backup file already exists and you copy over it, the old one is gone with no warning at all. That is exactly why getting into the habit of the interactive flag is worthwhile.

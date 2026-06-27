@@ -1,0 +1,9 @@
+Mounting, connecting filesystems to the tree.
+
+A filesystem is not useful until it is mounted somewhere in the directory tree. The mount command attaches a filesystem at a chosen directory, and the unmount command detaches it. In its full form, you give mount an optional type, optional options, the device, and the mount point. So you might mount a partition at a directory under slash mount, optionally stating the type explicitly, or read-only, or with several comma-separated options at once.
+
+The mount point must already exist as an empty directory, so you make it first if needed. One thing to be aware of: anything that was previously visible at that directory becomes hidden while the filesystem is mounted there, reappearing only when you unmount.
+
+There are several mount options worth knowing. R-o means read-only and r-w read-write, which is the default. No-a-time skips updating each file's access time on every read, a small performance win. No-suid, no-dev, and no-exec are security hardening options that respectively ignore set-user-I-D bits, ignore device files, and forbid running programs from that filesystem. And the keyword defaults is a convenient shorthand for the normal set of options.
+
+It also helps to recognise three flavours of what you can mount. Most common is a real block device like a partition. Then there are virtual filesystems, where the source is a kernel filesystem type rather than a device, such as the proc filesystem on slash proc or a ram-backed one on slash t-m-p. And there is the bind mount, which makes the same data appear at a second path, heavily used by containers. To see what is currently mounted, the friendliest tool is find-mount, which shows a clean tree; mount on its own and the d-f command with the type flag also work.

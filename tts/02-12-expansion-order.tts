@@ -1,0 +1,9 @@
+Expansion order, what the shell does to your line.
+
+Before any command actually runs, the shell transforms the line you typed through a sequence of steps, and they always happen in the same order. Knowing that order explains a surprising number of why-didn't-that-work moments.
+
+Roughly, it goes like this. First, history expansion replaces things like the double exclamation mark with previous commands. Then brace expansion turns a comma-separated list in braces into several arguments, and a numeric range in braces into a sequence of numbers. Next, tilde expansion turns tilde into your home directory. Then variable expansion replaces a dollar-name with its value, command substitution runs a command in parentheses and inserts its output, and arithmetic expansion evaluates a sum. After all of that, word splitting breaks the result apart on whitespace into separate arguments, glob expansion matches any wildcards against real filenames, and finally quote removal strips off the surviving quotes just before the command runs.
+
+You do not need to memorise every step today. What matters is knowing that it happens in this fixed order, because some genuinely confusing bugs come from the order not being what you expected. For instance, if you capture the output of listing your text files into a variable, the wildcard is expanded first, then the listing runs, then its output is captured, and only then is it assigned. If those filenames contain spaces, using that variable later without quotes will split it apart on those spaces.
+
+That is also the deeper reason quoting variables is the safe default. Wrapping a value in double quotes skips both word splitting and glob expansion on it, which is exactly what you want when the value is meant to stay a single string.

@@ -1,0 +1,9 @@
+The shadow file, where passwords actually live.
+
+The hashed passwords live in slash e-t-c slash shadow. Unlike the password file, this one is readable only by root, and its name captures the idea: it shadows the password file, holding the secrets that file deliberately leaves out.
+
+Its format is again colon-separated. The first field is the username, and the second is the password hash itself, which carries a salt and a marker for the algorithm used. After that come a series of aging fields: the date the password was last changed, the minimum number of days before it may be changed again, the maximum age before it must be changed, how many days ahead of expiry to warn the user, and a date on which the whole account expires.
+
+The password field can also hold special values instead of a hash. An exclamation mark means the account is locked, so it cannot be used with a password, though it might still be reachable by an s-s-h key. An asterisk means the account never had a password, typical for system accounts. And an empty field means no password is required at all, which is a security disaster you should eliminate everywhere.
+
+The hash begins with a marker telling you the algorithm. Dollar-one is the old m-d-five, weak and best avoided. Dollar-five is s-h-a two-fifty-six, dollar-six is s-h-a five-twelve, common on older systems, and dollar-y is yes-crypt, the modern default on newer debian and ubuntu. In practice you rarely read this file directly; the commands passwd, ch-age, user-add, and user-mod all edit it for you safely.

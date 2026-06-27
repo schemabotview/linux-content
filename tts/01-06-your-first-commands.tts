@@ -1,0 +1,9 @@
+Your first commands.
+
+Let us start with the smallest possible commands, the ones that simply tell you who and where you are. None of them take any arguments. You just type the name and press enter.
+
+Whoami prints your username, which is handy when you have switched accounts and lost track of who you currently are. Hostname prints the name of the machine you are on. Print working directory, written p-w-d, tells you exactly where you are sitting in the filesystem right now.
+
+The date command prints the current date and time according to the system clock. And you-name, with the all flag, prints information about the kernel itself, the kernel name, its version, and the hardware it is running on. Without that flag you-name just gives you the kernel name, which is almost always simply the word linux.
+
+None of these commands change anything on the system; they only report. That makes them the perfect first commands to build confidence with. Type one, read what comes back, then type the next.

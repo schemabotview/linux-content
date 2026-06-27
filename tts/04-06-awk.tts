@@ -1,0 +1,9 @@
+Awk, the pattern-action language.
+
+Awk is a small programming language built for text that comes in records and fields. The mental model is simple: for each input line, awk splits it into fields, then runs a sequence of rules, each one a pattern followed by an action in curly braces.
+
+The defaults are what make it so handy. Each line is one record, and each record is split into fields on whitespace. The first field is dollar-one, the second is dollar-two, and the last is dollar-N-F, where N-F is the number of fields. Dollar-zero is the whole line, and N-R is the current record number, effectively a line counter. So the simplest awk programs just print a field: print the first field of every line, or the last field, or the first and third together.
+
+Patterns can be regular expressions written between slashes, which makes awk behave like grep: a pattern on its own prints matching lines, and a negated pattern prints the ones that do not match. The real power, though, comes from changing the field separator with the dash capital-f flag. The classic example is the password file, whose fields are separated by colons; with dash capital-f colon you can pull out just the usernames, or the username and the login shell, or filter to only the real human users by testing the user-I-D field.
+
+Two special rules round it out. A begin block runs once before any input, and an end block runs once after all the input is read. Combine an end block with an associative array, which counts things by key, and you have everything you need for quick ad-hoc data aggregation, like counting how many users have each login shell. The rule of thumb is this: reach for sed when you just need a simple substitution, and reach for awk the moment you are dealing with columns, arithmetic, accumulation, or anything that needs to remember state across lines.

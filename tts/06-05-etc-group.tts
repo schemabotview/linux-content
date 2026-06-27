@@ -1,0 +1,9 @@
+The group file.
+
+The file at slash e-t-c slash group lists the groups on the system and who belongs to them. It is one line per group, with four colon-separated fields: the group name, a rarely-used password placeholder, the group I-D, and finally a comma-separated list of the group's supplementary members.
+
+This is where the distinction between primary and supplementary groups becomes concrete. A user's primary group is the group I-D recorded in their line of the password file, and files they create are owned by that group by default. On most modern distributions each user has a primary group that matches their own username, the so-called user private group model. Supplementary groups are the extra groups a user belongs to, listed here in the group file, and a user can be in many at once; when deciding access, the kernel considers all of them.
+
+Several groups come up again and again. The sudo group on the debian family, or wheel on the red hat family, grants its members the ability to use sudo. The a-d-m group can read the system logs. The docker group can run containers without sudo, which effectively means root, so treat membership with care. And groups like audio, video, and disk give access to particular devices.
+
+To inspect membership you use the groups command for yourself or another user, or id to see the user I-D, group I-D, and all groups in one line. And in scripts, prefer get-ent, which looks users and groups up through the full system database, so it works correctly even when accounts come from a network directory rather than these local files.

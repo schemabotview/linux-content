@@ -1,0 +1,9 @@
+Output redirection, pointing the firehose.
+
+By default a command writes its output to your terminal. Redirection sends that output somewhere else instead, usually into a file. To understand it you first need to know that a command actually produces two separate streams. Standard output is the normal result of a successful command, and it is known as file descriptor one. Standard error is where error messages and diagnostics go, and it is file descriptor two. They are kept separate on purpose, so you can redirect one without touching the other.
+
+The basic operators are straightforward. A single greater-than sign redirects standard output to a file, overwriting whatever was there. Two greater-than signs append to the file instead of overwriting it. A two followed by a greater-than sign redirects the error stream to a file. And redirecting to slash dev slash null throws output away entirely, into what people call the bit bucket.
+
+Combining the two streams is where it gets interesting. The notation two, greater-than, ampersand, one means send standard error to wherever standard output is currently going. So to silence a command completely you redirect standard output to slash dev slash null and then merge standard error into it. To capture everything into one log file, the ampersand-greater-than form sends both streams to the same place.
+
+One subtlety trips people up: order matters, and you read redirections left to right. Redirecting output to a file and then merging errors into it puts both in the file, which is usually what you want. But doing it in the opposite order points the errors at the terminal first and only afterwards sends output to the file, leaving your errors on screen. Same characters, different order, very different result.

@@ -1,0 +1,9 @@
+Reading system-control status.
+
+When you are investigating any service, the first command to run is system-control status, naming the service, and learning to read its output fluently saves an enormous amount of time. Let us decode it line by line.
+
+At the top is a coloured dot, which is a quick visual cue: green means active, red means failed, and white means inactive. The loaded line tells you where the unit file is and, crucially, whether the unit is enabled, meaning it starts at boot, or disabled. The active line gives the runtime state and how long it has been in it. The states worth knowing are: active and running for a normal daemon; active but exited, which is perfectly fine for a one-shot task that finished its job; inactive and dead, meaning simply not running; failed, meaning it crashed or exited with an error; and activating, meaning it is in the middle of starting, perhaps waiting to retry.
+
+Below that, the main process I-D names the primary process, handy for further investigation. The tasks line shows how many processes and threads belong to this service, against the configured limit. The memory line shows how much memory the whole service is using. And the control-group section draws the entire tree of processes the service owns, no matter how deeply nested, which is exactly what lets systemd clean them all up together.
+
+But here is the single most useful thing about this command: at the bottom it shows you the most recent log lines for that service. When a service will not start, that is the very first place to look, because the reason is usually sitting right there. For more history you turn to the journal, which we come to shortly, but status gives you the immediate clue for free.

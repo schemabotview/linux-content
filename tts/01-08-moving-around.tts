@@ -1,0 +1,9 @@
+Moving around.
+
+To change which directory you are sitting in, you use the change-directory command, written c-d. On its own it is simple, but a handful of shorthand symbols save you an enormous amount of typing.
+
+Tilde always means your home directory, somewhere like slash home slash ubuntu. A single dot means the directory you are already in. Two dots mean the parent directory, one level up. A single dash is special: it toggles you back to the previous directory you were in, so you can bounce between two places. And a lone slash means the very root of the filesystem.
+
+So change-directory slash e-t-c takes you straight to e-t-c. Change-directory dot dot moves you up one level. Change-directory with nothing after it, or with a tilde, returns you home. And change-directory dash flips you back to wherever you just came from. Whenever you are unsure where you have landed, print working directory will confirm it.
+
+There is one more idea worth pinning down now: the difference between absolute and relative paths. A path that begins with a slash is absolute; it is measured from the root of the filesystem and means the same thing no matter where you are. A path that does not begin with a slash is relative; it is measured from your current location. So if you are sitting in slash var, then change-directory log, with no leading slash, takes you to slash var slash log, while change-directory slash log would try to jump to a top-level log directory entirely.

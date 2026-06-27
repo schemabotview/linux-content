@@ -1,0 +1,9 @@
+Quoting, when the shell takes you literally.
+
+Try echoing the words hello and world with several spaces between them, and you get back just a single space. That is because, before handing your words to a command, the shell collapses runs of whitespace between arguments. If you actually want those spaces preserved, you have to quote the string. Quoting is the shell's way of saying treat this text literally, and there are three forms, each switching off a different amount of the shell's normal interpretation.
+
+Single quotes are the strictest. Everything between them is taken completely literally: no variable substitution, no command substitution, nothing. If you put a dollar sign and the word home inside single quotes, you get back the literal dollar-home, not the path to your home directory.
+
+Double quotes are softer. They preserve whitespace and most special characters, but variable substitution and command substitution still happen inside them. So the same dollar-home inside double quotes does expand to your actual home directory. The backslash is the third form; it escapes just the single character that follows it, so a backslash before a dollar sign gives you a literal dollar sign.
+
+The practical rule to carry away is this: when in doubt, wrap your variable references in double quotes. By far the most common beginner bug is an unquoted variable that happens to contain spaces; the shell splits it into several separate arguments and the command misbehaves. Quoting it keeps it together as one piece.

@@ -1,0 +1,9 @@
+Grep, searching for text.
+
+Grep reads its input one line at a time, prints the lines that match a pattern, and throws the rest away. Its name comes from global regular expression print, and it is probably the most-typed command in linux after list. You can point it at a file, at several files, or pipe the output of another command into it.
+
+The pattern can be a simple piece of text or a full regular expression, which we will meet next; for now, treat it as a string and quote it to be safe. So you might search a log file for the word error, search the password file for root, or filter the output of a process listing for bash.
+
+A handful of flags do most of the work. Dash i makes the match case-insensitive. Dash v inverts the search, printing the lines that do not match, which is perfect for stripping out comment lines. Dash n prefixes each result with its line number. Dash c gives you just the count of matching lines rather than the lines themselves. Dash r recurses down into directories. And the context flags are wonderful when reading logs: dash capital-a prints a few lines after each match, dash capital-b a few lines before, and dash capital-c a few lines on both sides.
+
+Two more worth knowing. Dash capital-f treats the pattern as a fixed string rather than a regular expression, which is faster and saves you escaping special characters. And dash capital-e turns on extended regular expressions, which you will almost always want, as we are about to see. If you find yourself searching through code a lot, it is worth installing ripgrep, a modern, dramatically faster grep that respects ignore files and has saner defaults.

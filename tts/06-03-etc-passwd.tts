@@ -1,0 +1,7 @@
+The password file.
+
+The file at slash e-t-c slash passwd is the user database. It is plain text, one line per user, with seven fields separated by colons. It is world-readable, meaning anyone can read it, though only root can change it.
+
+Let us walk the seven fields in order. The first is the username, the login name. The second is a password placeholder, which on any modern system is just the letter x; the real password hash lives elsewhere, because this file is readable by everyone. The third field is the numeric user I-D, the number the kernel actually checks, where zero means root. The fourth is the primary group I-D. The fifth is the gecos field, historically a comment holding the person's full name and contact details, today usually just a name or left blank. The sixth is the home directory, where the user lands after logging in. And the seventh is the login shell, the program that runs when they log in, usually bash, or set to a no-login shell to forbid logging in altogether, which is common for system accounts.
+
+Because the file is world-readable, anyone can print it and enumerate the accounts on the system, and that is intentional, since many programs need to translate user I-Ds into names. The crucial point to hold on to is that the actual password hashes are deliberately not kept here. They live in a separate, far more restricted file, which is exactly where we turn next.

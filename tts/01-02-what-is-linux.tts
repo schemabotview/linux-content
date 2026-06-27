@@ -1,0 +1,11 @@
+What is linux.
+
+If you ask ten people what linux is, you will get ten slightly different answers, and the confusing part is that all of them are correct. Let us untangle it.
+
+Strictly speaking, linux is just one program: the kernel. The kernel is the software that talks directly to your hardware, the see-pee-you, the memory, the disks, the network cards. Every time a program wants to read a file or print to the screen, it ultimately asks the kernel to do that for it.
+
+But you cannot use a kernel on its own. A kernel by itself has no command prompt, no programs to run, no way for you to interact with it. You need a whole layer of software wrapped around it: a shell to type into, basic commands like list and copy, and a way to install more software.
+
+When all of that is bundled together, you get a linux distribution, or distro for short. So when someone says I run linux, they almost always mean I run a linux distribution, something like ubuntu, debian, fedora, red hat, or arch. Each one makes slightly different choices about what to include and how to install software, but underneath they all run the very same linux kernel.
+
+Picture the system as four layers stacked top to bottom. At the top are your programs, the web browser, python, your own scripts. Below them sit the userspace tools, list, copy, bash, the things the distribution adds. Below those is linux itself, the kernel, which is what the word linux technically means. And at the very bottom is your hardware. In this course we will use ubuntu for our examples and point out where the red hat family differs.

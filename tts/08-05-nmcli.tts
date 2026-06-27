@@ -1,0 +1,9 @@
+N-m-c-l-i, network-manager from the command line.
+
+Network-manager is the modern linux service for configuring the network, and n-m-c-l-i is its command-line interface, the tool you will use on a server that has no graphical desktop. To use it well, you need to understand the two concepts it works with. The first is devices, which are the physical or virtual interfaces themselves, the same ones the i-p command shows. The second is connections, which are configuration profiles that can be activated on a device. You can have several connection profiles for one device, say home wireless and office wireless, but only one is active at a time.
+
+For inspection, you can run n-m-c-l-i on its own for a full status, ask for the device status to see one line per device, or show the connections to list all your profiles, including the full detail of any one of them.
+
+To create a static address, you add a new ethernet connection, giving it a name and the interface it belongs to, and then set four things: the method to manual, the address with its prefix length, the gateway, and the dee-en-ess servers. Then you bring the connection up to activate it. If you wanted d-h-c-p instead, you would simply set the method to automatic and leave out the address, gateway, and dee-en-ess fields, since the server provides them.
+
+Modifying an existing connection works the same way: you change a property, for instance the dee-en-ess servers, and then bring the connection up again so the change takes effect. Bringing a connection down deactivates it, and deleting it removes the profile entirely. There is also a quick wireless workflow, listing the available networks and connecting to one with its password. For the exam, know how to add a connection with a manual method and the four key fields, and how to bring connections up and down.

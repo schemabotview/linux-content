@@ -1,0 +1,7 @@
+Unit types.
+
+Every systemd unit file ends in a suffix that tells you what type of thing it is, and recognising those suffixes makes the whole system far less mysterious. The most common, and the one you will work with most, is the service unit, which describes a daemon or a one-shot process to run, like a web server. Then there is the socket unit, which describes a socket the kernel listens on and which activates the matching service on demand only when a connection arrives.
+
+The timer unit is the modern replacement for cron, triggering another unit on a schedule. The target unit is a grouping, used to organise other units into a system state, much like the old runlevels. There are also mount and automount units, which describe mount points as an alternative to the filesystem table, device units auto-generated for hardware, path units that trigger when a file or directory changes, slice units for resource control, and swap units for swap areas.
+
+In practice the three you will write and manage by far the most are the service, the timer, and occasionally the target. To see what exists, the system-control command can list units of a particular type: all the running services, or all of them including stopped ones, or all the active timers, or every service unit file on the system whether enabled or not. Knowing how to list units by type is the starting point for almost any investigation of what a machine is doing.

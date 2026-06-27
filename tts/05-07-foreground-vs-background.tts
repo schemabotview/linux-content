@@ -1,0 +1,7 @@
+Foreground versus background.
+
+By default, when you run a command, the shell waits for it to finish before giving you the next prompt. That command is running in the foreground, holding your terminal until it is done. But you do not always want to wait. To run a command in the background, so it runs while you keep typing, you simply add an ampersand at the end. The shell hands you back your prompt and prints a job number in square brackets along with the process I-D.
+
+That job number is local to your shell, and you can list what is running with the jobs command. To pull a background job back into the foreground, you use f-g with a percent sign and the job number, or just f-g on its own for the most recent one. Going the other way, if a command is already running in the foreground and you wish you had backgrounded it, press control-z. That pauses the process, leaving it in the stopped state, and returns your prompt; then typing b-g resumes it, now running in the background. That control-z, then b-g sequence is the classic recovery for I started something that is taking too long.
+
+Two keystrokes are easy to confuse, so keep them distinct. Control-c terminates the foreground process by sending it an interrupt signal. Control-z merely pauses it. And when you want the shell to pause until your background jobs finish, the wait command does exactly that, either for everything or for one specific job or process I-D.

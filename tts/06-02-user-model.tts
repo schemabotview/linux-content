@@ -1,0 +1,9 @@
+The linux user model.
+
+Linux was designed as a multi-user operating system from its very first day. A single machine can carry hundreds of accounts, each with its own files and processes, kept isolated from one another, and that isolation rests entirely on user identity.
+
+There are three rough classes of account. At the top is root, with user I-D zero, the superuser. Root can do anything: read any file, kill any process, change any setting. There is exactly one root account, and you should never log in as root for everyday work, because doing so switches off all the safety rails the system gives you. Instead you use sudo to perform specific administrative tasks only when you need them.
+
+Below root are the system users, with user I-Ds roughly in the range one to nine hundred ninety-nine. These are accounts for daemons and services: one identity runs the web server, another the database, another the networking. They usually have no password and no login shell, existing purely to give each service an identity the kernel can govern. And then there are the regular users, from user I-D one thousand upward: the human accounts, each with a home directory, a login shell, and a password.
+
+Holding the whole model together is one simple idea. Every time you try to do something, the kernel checks the running process's credentials, its user and group I-Ds, against the file's owner, group, and permission bits, and from that it makes an access decision. That single check is the entire model; everything else in this notebook is just the plumbing around it. You can see your own identity at any time with the id command, or with whoami and groups.

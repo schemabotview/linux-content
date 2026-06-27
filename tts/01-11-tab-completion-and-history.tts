@@ -1,0 +1,9 @@
+Tab completion and history.
+
+Two features of the shell will save you more keystrokes than anything else you learn, so it is worth building the habit now. The first is tab completion; the second is command history.
+
+Tab completion works like this. Start typing a command or a path and press the tab key. If there is only one way to finish what you started, the shell completes it for you instantly. If there are several possibilities, press tab twice and it lists them all. So typing list, space, slash e-t and pressing tab completes to slash e-t-c. Tab completes commands, directory names, filenames, even some option names. Typing a long path by hand is asking for a typo; tab-completing through it is fast and reliable. Use it constantly.
+
+Command history is the second habit. Every command you run is recorded, and you can walk back through previous commands with the up and down arrow keys. There are faster ways to reach into history, too. The history command prints your recent commands with line numbers. Two exclamation marks re-runs the very last command, which pairs beautifully with sudo when you forgot to type it the first time. An exclamation mark followed by a number re-runs that numbered command, and an exclamation mark followed by some letters re-runs the most recent command that began with them.
+
+The most powerful of all is control-r, an interactive reverse search. Press it, start typing any part of an earlier command, and the shell finds the most recent match. Press control-r again to step further back, then enter to run it, or the arrow keys to edit it first. All of this history survives between sessions, stored in a hidden file in your home directory, so the commands you ran yesterday are still there for you today.

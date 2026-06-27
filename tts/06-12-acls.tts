@@ -1,0 +1,9 @@
+Access control lists, for when owner, group, and other is not enough.
+
+The standard three-class model, user, group, and other, covers most situations, but it cannot express something like: I want alice to have write access, and bob to have read access, and everyone else nothing. There is simply no room for two different named people with two different permissions. For exactly this, linux supports access control lists, often shortened to a-c-l-s.
+
+Access control lists let you grant explicit permissions to named users and named groups, beyond the file's single owner and single group. They are an extension layered on top of the standard model: the ordinary owner, group, and other bits still exist, and the list adds extra entries alongside them. To see the access control list on a file you use get-f-a-c-l, which prints the owner, the group, and each permission entry; a file with no special entries simply shows the equivalent of its standard permissions.
+
+To add an entry you use set-f-a-c-l with the dash m flag, naming a user or group and the permissions to grant, and you can remove a single entry with dash x or strip them all with dash b to return to plain permissions. Once a file has any such entries, an ordinary long listing shows a plus sign at the end of the permission string as a hint that an access control list is present, and you use get-f-a-c-l to see the detail. For directories there are also default entries, set with the dash d flag, which act as a template applied to newly created files inside.
+
+A word on when to use them. They are right for case-by-case grants where the standard model is awkward, but wrong as your primary access-control mechanism, because they are harder to audit, easy to forget in backups, and can confuse other administrators. Prefer groups and standard permissions where you can. For the exam, know that access control lists exist, how to read get-f-a-c-l output, and the basic set-f-a-c-l syntax.

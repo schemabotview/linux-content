@@ -1,0 +1,9 @@
+Regular expressions, a brief tour.
+
+A regular expression is a tiny language for describing patterns in text, and grep, sed, and awk all speak it. The full language is large, but the part you actually need for everyday system work is small, so let us focus on that.
+
+The first thing to know is that there are two flavours. Basic regular expressions are the default in grep and sed, and they make you put a backslash in front of many special characters. Extended regular expressions, switched on with the dash capital-e flag, let those characters work without escaping, and awk uses them by default. Use extended expressions as your default; it is what people mean by regex today.
+
+Now the pieces you will meet most. A dot matches any single character. A caret anchors to the start of a line, and a dollar sign anchors to the end. A star means zero or more of the previous character, a plus means one or more, and a question mark means optional, zero or one. Curly braces let you ask for an exact count or a range. Square brackets define a character class, matching any one of the characters inside, and you can give a range like a-through-z; put a caret just inside the brackets and it matches anything except those characters. A vertical bar between two patterns means either one.
+
+There are also portable named classes, like the digit class, the alpha class for letters, and the space class for whitespace, written with double square brackets. Do not try to swallow the whole language at once. Start with just four building blocks: the two anchors, caret and dollar; character classes in square brackets; and the repetition operators, star and plus. The two patterns you will reach for again and again are a caret followed by some text, meaning lines that start with it, and some text followed by a dollar sign, meaning lines that end with it. Those few pieces cover most real-world searches.

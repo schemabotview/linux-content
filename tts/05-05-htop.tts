@@ -1,0 +1,7 @@
+H-top, the friendlier alternative.
+
+H-top is top's much friendlier cousin: coloured, mouse-aware, and altogether clearer to read. It is not installed by default on most distributions, so you install it first, with apt on the debian and ubuntu family or d-n-f on the red hat family.
+
+What h-top adds over plain top is mostly about comfort and discoverability. Across the top it draws a bar for each see-pee-you core, plus gauges for memory and swap, so the state of the machine is visible at a glance. Along the bottom it lays out function-key shortcuts, so you do not have to memorise letters: f-five toggles a tree view, f-six lets you choose which column to sort by, f-nine sends a signal to the highlighted process from a menu, and f-ten quits. You can scroll up and down through the entire process list with the arrow keys, tag several processes with the space bar to act on them together, and even use the mouse to click a column to sort or click a process to select it.
+
+For everyday work, the recommendation is simple: install h-top on every machine you regularly use, because for interactive use it is strictly nicer than top. Plain top still earns its place for scripted monitoring, where its batch mode is more reliable. And if you want something even more modern and graphical, with usage graphs over time, look at b-top.

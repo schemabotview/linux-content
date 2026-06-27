@@ -1,0 +1,11 @@
+Why linux matters.
+
+You almost certainly use linux already, even if you have never noticed it. Let me show you where it lives.
+
+Almost every server on the internet runs linux. The web servers, the databases, the mail servers, the content delivery networks, the overwhelming majority are linux. Amazon, google, facebook, netflix, github, all linux underneath.
+
+Every android phone is built on linux; android's kernel is the linux kernel with some additions. The cloud is linux too. When you spin up a virtual machine on amazon web services, google cloud, or azure, it is almost certainly running linux.
+
+Containers are linux as well. Docker and kubernetes are built directly on linux features. Embedded devices run it, your router, your smart tee-vee, the car infotainment system, even the mars rovers. And every single one of the top five hundred supercomputers in the world runs linux.
+
+Here is what that means for you. If you work anywhere near software, as a developer, a system administrator, a dev-ops or data engineer, or in security, knowing linux is not optional. It is the floor you stand on. This course is built to take you from zero all the way to the l-f-c-s certification, the linux foundation certified system administrator exam, one of the most widely recognised entry-level linux credentials.

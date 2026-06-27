@@ -1,0 +1,7 @@
+The polite-then-forceful escalation.
+
+There is a standard, well-mannered pattern for shutting down a misbehaving process, and it is worth doing in order rather than reaching straight for brute force. First, send sig-term, the polite request. Second, wait a few seconds, giving the process a real chance to clean up after itself: to flush its logs, close its database connections, and save its state. Third, only if it is still alive after that grace period, send sig-kill to force it down.
+
+There is a neat trick for checking whether a process is still alive between those steps. Sending signal zero does not actually deliver anything to the process; it is a test-only signal that simply succeeds if the process exists and fails if it does not. So you can use it to decide whether the forceful kill is even necessary.
+
+The mistake to avoid is reaching for sig-kill, the dash-nine signal, first. It is a very common new-user habit, and it is harmful, because sig-kill gives the process no chance to clean up. Files can be left half-written, databases corrupted, locks still held, temporary files orphaned. Always try the polite signal first, give it a few seconds, and escalate only if you must. This, by the way, is exactly what the service manager does for you behind the scenes when you stop a service: it sends sig-term, waits for a configured timeout, and only then sends sig-kill. You rarely have to perform the escalation by hand, but you should understand what is happening when you do.

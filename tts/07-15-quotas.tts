@@ -1,0 +1,9 @@
+Quotas, per-user limits on disk usage.
+
+Quotas let you cap how much disk space a particular user, or group, may consume on a filesystem. They are invaluable on any shared, multi-user system, a shared server, web hosting, or a lab full of students, where you want to stop any single person from filling the whole disk and bringing everyone down with them.
+
+There are two kinds of limit. A block quota limits the total bytes a user may use, and an inode quota limits the number of files they may create, since a flood of tiny files can be just as harmful as a few huge ones. And each limit comes at two levels of strictness. A soft limit is a warning threshold the user may exceed temporarily, during a grace period of, by default, seven days. A hard limit is an absolute ceiling; once it is reached, further writes simply fail.
+
+Setting quotas up is a one-time job per filesystem. First you install the quota tools. Then you enable quotas on the target filesystem by adding the user-quota and group-quota options to its line in the filesystem table. Then you remount that filesystem and initialise the quota databases, with quota-check to create the accounting files and quota-on to switch enforcement on.
+
+After that, day-to-day management is straightforward. You edit a user's limits interactively with ed-quota, which opens an editor showing their soft and hard limits for both blocks and inodes, or you set them non-interactively with set-quota, which is scriptable. To inspect usage, the quota command shows one user's limits and current usage, while rep-quota produces a full report across all users. And you can adjust the grace period, how long someone may sit above their soft limit, through ed-quota as well. For the exam, know how to enable quotas in the filesystem table, initialise them, set limits, and inspect them.
