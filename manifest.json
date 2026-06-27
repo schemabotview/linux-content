@@ -4,7 +4,7 @@
   "scenes": [
     {
       "id": "linux",
-      "title": "Linux \u2014 the full stack (userspace \u2192 kernel \u2192 hardware)",
+      "title": "Linux — the full stack (userspace → kernel → hardware)",
       "status": "built"
     }
   ],
@@ -15,11 +15,6 @@
       "notebook": "notebooks/01-getting-started-with-linux.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "What is Linux?",
           "scene": "linux",
@@ -50,7 +45,7 @@
           "audio": "audio/01-05-what-you-see-when-you-log-in.wav"
         },
         {
-          "heading": "Your first commands \u2014 answering \"where am I?\"",
+          "heading": "Your first commands — answering \"where am I?\"",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -59,7 +54,7 @@
           "audio": "audio/01-06-your-first-commands.wav"
         },
         {
-          "heading": "Listing what's in a directory \u2014 `ls`",
+          "heading": "Listing what's in a directory — `ls`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -69,7 +64,7 @@
           "audio": "audio/01-07-listing-a-directory.wav"
         },
         {
-          "heading": "Moving around \u2014 `cd`, `..`, `.`, `~`",
+          "heading": "Moving around — `cd`, `..`, `.`, `~`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -79,7 +74,7 @@
           "audio": "audio/01-08-moving-around.wav"
         },
         {
-          "heading": "Command structure \u2014 the anatomy of a command",
+          "heading": "Command structure — the anatomy of a command",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -97,7 +92,7 @@
           "audio": "audio/01-10-filesystem-hierarchy.wav"
         },
         {
-          "heading": "Tab completion and history \u2014 the two shortcuts you'll use most",
+          "heading": "Tab completion and history — the two shortcuts you'll use most",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -107,18 +102,13 @@
           "audio": "audio/01-11-tab-completion-and-history.wav"
         },
         {
-          "heading": "Getting help \u2014 `man`, `--help`, `apropos`, `info`",
+          "heading": "Getting help — `man`, `--help`, `apropos`, `info`",
           "scene": "linux",
           "spine": false,
           "highlight": [
             "lx-shell"
           ],
           "audio": "audio/01-12-getting-help.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -129,17 +119,12 @@
       "defaultScene": "linux",
       "sections": [
         {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
-        {
           "heading": "A quick recap and where we're going",
           "scene": "linux",
           "spine": false
         },
         {
-          "heading": "Keyboard shortcuts \u2014 the ones that pay back instantly",
+          "heading": "Keyboard shortcuts — the ones that pay back instantly",
           "scene": "linux",
           "spine": false,
           "role": "hook",
@@ -150,7 +135,7 @@
           "audio": "audio/02-03-keyboard-shortcuts.wav"
         },
         {
-          "heading": "Variables \u2014 naming values",
+          "heading": "Variables — naming values",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -160,7 +145,7 @@
           "audio": "audio/02-04-variables.wav"
         },
         {
-          "heading": "The environment \u2014 variables that programs inherit",
+          "heading": "The environment — variables that programs inherit",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -170,7 +155,7 @@
           "audio": "audio/02-05-the-environment.wav"
         },
         {
-          "heading": "`export` \u2014 promoting a shell variable to the environment",
+          "heading": "`export` — promoting a shell variable to the environment",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -180,7 +165,7 @@
           "audio": "audio/02-06-export.wav"
         },
         {
-          "heading": "Quoting \u2014 when the shell takes you literally",
+          "heading": "Quoting — when the shell takes you literally",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -189,7 +174,7 @@
           "audio": "audio/02-07-quoting.wav"
         },
         {
-          "heading": "Output redirection \u2014 pointing the firehose",
+          "heading": "Output redirection — pointing the firehose",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -210,7 +195,7 @@
           "audio": "audio/02-09-input-redirection.wav"
         },
         {
-          "heading": "Pipes \u2014 the most important character in the shell",
+          "heading": "Pipes — the most important character in the shell",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -221,7 +206,7 @@
           "audio": "audio/02-10-pipes.wav"
         },
         {
-          "heading": "Globs \u2014 matching filenames with patterns",
+          "heading": "Globs — matching filenames with patterns",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -230,18 +215,13 @@
           "audio": "audio/02-11-globs.wav"
         },
         {
-          "heading": "Expansion order \u2014 what the shell does to your line",
+          "heading": "Expansion order — what the shell does to your line",
           "scene": "linux",
           "spine": false,
           "highlight": [
             "lx-expansion"
           ],
           "audio": "audio/02-12-expansion-order.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -252,17 +232,12 @@
       "defaultScene": "linux",
       "sections": [
         {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
-        {
           "heading": "Where we're going",
           "scene": "linux",
           "spine": false
         },
         {
-          "heading": "Creating files and directories \u2014 `touch` and `mkdir`",
+          "heading": "Creating files and directories — `touch` and `mkdir`",
           "scene": "linux",
           "spine": true,
           "role": "hook",
@@ -273,7 +248,7 @@
           "audio": "audio/03-03-creating-files-and-directories.wav"
         },
         {
-          "heading": "Viewing file contents \u2014 `cat`, `less`, `head`, `tail`, `more`",
+          "heading": "Viewing file contents — `cat`, `less`, `head`, `tail`, `more`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -283,7 +258,7 @@
           "audio": "audio/03-04-viewing-file-contents.wav"
         },
         {
-          "heading": "Copying \u2014 `cp`",
+          "heading": "Copying — `cp`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -293,7 +268,7 @@
           "audio": "audio/03-05-copying.wav"
         },
         {
-          "heading": "Moving and renaming \u2014 `mv`",
+          "heading": "Moving and renaming — `mv`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -303,7 +278,7 @@
           "audio": "audio/03-06-moving-and-renaming.wav"
         },
         {
-          "heading": "Deleting \u2014 `rm` and the careful use of `rm -r`",
+          "heading": "Deleting — `rm` and the careful use of `rm -r`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -313,7 +288,7 @@
           "audio": "audio/03-07-deleting.wav"
         },
         {
-          "heading": "Links \u2014 hard links and symbolic links",
+          "heading": "Links — hard links and symbolic links",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -334,7 +309,7 @@
           "audio": "audio/03-09-seven-file-types.wav"
         },
         {
-          "heading": "The permissions model \u2014 who can do what",
+          "heading": "The permissions model — who can do what",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -354,7 +329,7 @@
           "audio": "audio/03-11-reading-ls-l.wav"
         },
         {
-          "heading": "`chmod` \u2014 changing permissions",
+          "heading": "`chmod` — changing permissions",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -364,7 +339,7 @@
           "audio": "audio/03-12-chmod.wav"
         },
         {
-          "heading": "`chown` and `chgrp` \u2014 changing ownership",
+          "heading": "`chown` and `chgrp` — changing ownership",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -375,7 +350,7 @@
           "audio": "audio/03-13-chown-and-chgrp.wav"
         },
         {
-          "heading": "`umask` \u2014 what new files get by default",
+          "heading": "`umask` — what new files get by default",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -393,11 +368,6 @@
             "lx-vfs"
           ],
           "audio": "audio/03-15-hidden-files.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -407,11 +377,6 @@
       "notebook": "notebooks/04-text-processing-and-find.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "The Unix philosophy",
           "scene": "linux",
@@ -424,7 +389,7 @@
           "audio": "audio/04-02-unix-philosophy.wav"
         },
         {
-          "heading": "`grep` \u2014 searching for text",
+          "heading": "`grep` — searching for text",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -433,7 +398,7 @@
           "audio": "audio/04-03-grep.wav"
         },
         {
-          "heading": "Regular expressions \u2014 the brief tour",
+          "heading": "Regular expressions — the brief tour",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -442,7 +407,7 @@
           "audio": "audio/04-04-regular-expressions.wav"
         },
         {
-          "heading": "`sed` \u2014 the stream editor",
+          "heading": "`sed` — the stream editor",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -451,7 +416,7 @@
           "audio": "audio/04-05-sed.wav"
         },
         {
-          "heading": "`awk` \u2014 the pattern-action language",
+          "heading": "`awk` — the pattern-action language",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -460,7 +425,7 @@
           "audio": "audio/04-06-awk.wav"
         },
         {
-          "heading": "The supporting cast \u2014 `cut`, `sort`, `uniq`",
+          "heading": "The supporting cast — `cut`, `sort`, `uniq`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -469,7 +434,7 @@
           "audio": "audio/04-07-cut-sort-uniq.wav"
         },
         {
-          "heading": "More supporting cast \u2014 `tr`, `wc`, `head`, `tail`",
+          "heading": "More supporting cast — `tr`, `wc`, `head`, `tail`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -488,7 +453,7 @@
           "audio": "audio/04-09-top-n-by-frequency.wav"
         },
         {
-          "heading": "`find` \u2014 searching the filesystem",
+          "heading": "`find` — searching the filesystem",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -498,7 +463,7 @@
           "audio": "audio/04-10-find.wav"
         },
         {
-          "heading": "`find -exec` \u2014 acting on results",
+          "heading": "`find -exec` — acting on results",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -507,7 +472,7 @@
           "audio": "audio/04-11-find-exec.wav"
         },
         {
-          "heading": "Archives and compression \u2014 `tar` plus the lineup",
+          "heading": "Archives and compression — `tar` plus the lineup",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -525,11 +490,6 @@
             "lx-ssh"
           ],
           "audio": "audio/04-13-tar-pipe.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -539,11 +499,6 @@
       "notebook": "notebooks/05-processes-jobs-and-signals.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "What a process actually is",
           "scene": "linux",
@@ -556,7 +511,7 @@
           "audio": "audio/05-02-what-a-process-is.wav"
         },
         {
-          "heading": "`ps` \u2014 viewing processes",
+          "heading": "`ps` — viewing processes",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -566,7 +521,7 @@
           "audio": "audio/05-03-ps.wav"
         },
         {
-          "heading": "`top` \u2014 the live view",
+          "heading": "`top` — the live view",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -576,7 +531,7 @@
           "audio": "audio/05-04-top.wav"
         },
         {
-          "heading": "`htop` \u2014 the friendlier alternative",
+          "heading": "`htop` — the friendlier alternative",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -586,7 +541,7 @@
           "audio": "audio/05-05-htop.wav"
         },
         {
-          "heading": "Process states \u2014 R, S, D, T, Z",
+          "heading": "Process states — R, S, D, T, Z",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -596,7 +551,7 @@
           "audio": "audio/05-06-process-states.wav"
         },
         {
-          "heading": "Foreground vs background \u2014 `&`, `jobs`, `fg`, `bg`",
+          "heading": "Foreground vs background — `&`, `jobs`, `fg`, `bg`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -606,7 +561,7 @@
           "audio": "audio/05-07-foreground-vs-background.wav"
         },
         {
-          "heading": "Surviving session loss \u2014 `nohup`, `disown`, `setsid`, and `tmux`",
+          "heading": "Surviving session loss — `nohup`, `disown`, `setsid`, and `tmux`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -616,7 +571,7 @@
           "audio": "audio/05-08-surviving-session-loss.wav"
         },
         {
-          "heading": "Signals \u2014 the kernel's notification system",
+          "heading": "Signals — the kernel's notification system",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -635,7 +590,7 @@
           "audio": "audio/05-10-the-signals-you-will-use.wav"
         },
         {
-          "heading": "`kill`, `killall`, `pkill` \u2014 sending signals",
+          "heading": "`kill`, `killall`, `pkill` — sending signals",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -655,7 +610,7 @@
           "audio": "audio/05-12-escalation.wav"
         },
         {
-          "heading": "Priority \u2014 `nice` and `renice`",
+          "heading": "Priority — `nice` and `renice`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -666,7 +621,7 @@
           "audio": "audio/05-13-priority-nice-renice.wav"
         },
         {
-          "heading": "Scheduled tasks \u2014 `cron`",
+          "heading": "Scheduled tasks — `cron`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -676,7 +631,7 @@
           "audio": "audio/05-14-cron.wav"
         },
         {
-          "heading": "Other schedulers \u2014 `at` and systemd timers",
+          "heading": "Other schedulers — `at` and systemd timers",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -684,11 +639,6 @@
             "lx-targets"
           ],
           "audio": "audio/05-15-other-schedulers.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -698,11 +648,6 @@
       "notebook": "notebooks/06-users-groups-and-access-control.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "The Linux user model",
           "scene": "linux",
@@ -716,7 +661,7 @@
           "audio": "audio/06-02-user-model.wav"
         },
         {
-          "heading": "`/etc/passwd` \u2014 the user database",
+          "heading": "`/etc/passwd` — the user database",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -727,7 +672,7 @@
           "audio": "audio/06-03-etc-passwd.wav"
         },
         {
-          "heading": "`/etc/shadow` \u2014 where passwords actually live",
+          "heading": "`/etc/shadow` — where passwords actually live",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -737,7 +682,7 @@
           "audio": "audio/06-04-etc-shadow.wav"
         },
         {
-          "heading": "`/etc/group` \u2014 groups",
+          "heading": "`/etc/group` — groups",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -747,7 +692,7 @@
           "audio": "audio/06-05-etc-group.wav"
         },
         {
-          "heading": "User management \u2014 `useradd`, `usermod`, `userdel`",
+          "heading": "User management — `useradd`, `usermod`, `userdel`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -757,7 +702,7 @@
           "audio": "audio/06-06-user-management.wav"
         },
         {
-          "heading": "Passwords and account aging \u2014 `passwd`, `chage`",
+          "heading": "Passwords and account aging — `passwd`, `chage`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -766,7 +711,7 @@
           "audio": "audio/06-07-passwords-and-aging.wav"
         },
         {
-          "heading": "Group management \u2014 `groupadd`, `groupmod`, `groupdel`, `gpasswd`",
+          "heading": "Group management — `groupadd`, `groupmod`, `groupdel`, `gpasswd`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -775,7 +720,7 @@
           "audio": "audio/06-08-group-management.wav"
         },
         {
-          "heading": "Switching users \u2014 `su` vs `sudo`",
+          "heading": "Switching users — `su` vs `sudo`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -785,7 +730,7 @@
           "audio": "audio/06-09-su-vs-sudo.wav"
         },
         {
-          "heading": "`sudo` deep dive \u2014 `/etc/sudoers` and `visudo`",
+          "heading": "`sudo` deep dive — `/etc/sudoers` and `visudo`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -795,7 +740,7 @@
           "audio": "audio/06-10-sudoers-visudo.wav"
         },
         {
-          "heading": "Special permission bits \u2014 SUID, SGID, sticky",
+          "heading": "Special permission bits — SUID, SGID, sticky",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -806,7 +751,7 @@
           "audio": "audio/06-11-special-permission-bits.wav"
         },
         {
-          "heading": "ACLs \u2014 when standard owner/group/other isn't enough",
+          "heading": "ACLs — when standard owner/group/other isn't enough",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -816,7 +761,7 @@
           "audio": "audio/06-12-acls.wav"
         },
         {
-          "heading": "PAM \u2014 Pluggable Authentication Modules (preview)",
+          "heading": "PAM — Pluggable Authentication Modules (preview)",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -826,7 +771,7 @@
           "audio": "audio/06-13-pam.wav"
         },
         {
-          "heading": "Shell startup files \u2014 which one runs when",
+          "heading": "Shell startup files — which one runs when",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -835,11 +780,6 @@
             "lx-fhs-home"
           ],
           "audio": "audio/06-14-shell-startup-files.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -850,12 +790,7 @@
       "defaultScene": "linux",
       "sections": [
         {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
-        {
-          "heading": "The storage stack \u2014 a mental model",
+          "heading": "The storage stack — a mental model",
           "scene": "linux",
           "spine": true,
           "role": "hook",
@@ -878,7 +813,7 @@
           "audio": "audio/07-03-block-devices.wav"
         },
         {
-          "heading": "`lsblk` \u2014 see what's attached",
+          "heading": "`lsblk` — see what's attached",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -888,7 +823,7 @@
           "audio": "audio/07-04-lsblk.wav"
         },
         {
-          "heading": "Partitions and partition tables \u2014 MBR vs GPT",
+          "heading": "Partitions and partition tables — MBR vs GPT",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -898,7 +833,7 @@
           "audio": "audio/07-05-partitions.wav"
         },
         {
-          "heading": "Filesystems \u2014 the layer that turns blocks into files",
+          "heading": "Filesystems — the layer that turns blocks into files",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -908,7 +843,7 @@
           "audio": "audio/07-06-filesystems.wav"
         },
         {
-          "heading": "Mounting \u2014 connecting filesystems to the tree",
+          "heading": "Mounting — connecting filesystems to the tree",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -919,7 +854,7 @@
           "audio": "audio/07-07-mounting.wav"
         },
         {
-          "heading": "`/etc/fstab` \u2014 persistent mounts",
+          "heading": "`/etc/fstab` — persistent mounts",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -930,7 +865,7 @@
           "audio": "audio/07-08-fstab.wav"
         },
         {
-          "heading": "UUID and LABEL \u2014 the stable way to identify filesystems",
+          "heading": "UUID and LABEL — the stable way to identify filesystems",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -940,7 +875,7 @@
           "audio": "audio/07-09-uuid-and-label.wav"
         },
         {
-          "heading": "`df` and `du` \u2014 the two questions about disk space",
+          "heading": "`df` and `du` — the two questions about disk space",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -950,7 +885,7 @@
           "audio": "audio/07-10-df-and-du.wav"
         },
         {
-          "heading": "Swap \u2014 virtual memory backup",
+          "heading": "Swap — virtual memory backup",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -961,7 +896,7 @@
           "audio": "audio/07-11-swap.wav"
         },
         {
-          "heading": "LVM \u2014 flexible storage management",
+          "heading": "LVM — flexible storage management",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -971,7 +906,7 @@
           "audio": "audio/07-12-lvm.wav"
         },
         {
-          "heading": "LVM operations \u2014 resize, snapshots, extend",
+          "heading": "LVM operations — resize, snapshots, extend",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -981,7 +916,7 @@
           "audio": "audio/07-13-lvm-operations.wav"
         },
         {
-          "heading": "RAID basics \u2014 redundancy across disks",
+          "heading": "RAID basics — redundancy across disks",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -991,7 +926,7 @@
           "audio": "audio/07-14-raid-basics.wav"
         },
         {
-          "heading": "Quotas \u2014 per-user limits on disk usage",
+          "heading": "Quotas — per-user limits on disk usage",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -999,11 +934,6 @@
             "lx-uid"
           ],
           "audio": "audio/07-15-quotas.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -1013,11 +943,6 @@
       "notebook": "notebooks/08-networking-and-ssh.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "TCP/IP refresher",
           "scene": "linux",
@@ -1040,7 +965,7 @@
           "audio": "audio/08-03-network-interfaces.wav"
         },
         {
-          "heading": "Getting an IP \u2014 static vs DHCP",
+          "heading": "Getting an IP — static vs DHCP",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1050,7 +975,7 @@
           "audio": "audio/08-04-getting-an-ip.wav"
         },
         {
-          "heading": "`nmcli` \u2014 NetworkManager from the command line",
+          "heading": "`nmcli` — NetworkManager from the command line",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1060,7 +985,7 @@
           "audio": "audio/08-05-nmcli.wav"
         },
         {
-          "heading": "Routing \u2014 how packets find their destination",
+          "heading": "Routing — how packets find their destination",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1071,7 +996,7 @@
           "audio": "audio/08-06-routing.wav"
         },
         {
-          "heading": "DNS \u2014 turning names into addresses",
+          "heading": "DNS — turning names into addresses",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1081,7 +1006,7 @@
           "audio": "audio/08-07-dns.wav"
         },
         {
-          "heading": "SSH \u2014 the secure shell",
+          "heading": "SSH — the secure shell",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1091,7 +1016,7 @@
           "audio": "audio/08-08-ssh.wav"
         },
         {
-          "heading": "SSH keys \u2014 the right way to authenticate",
+          "heading": "SSH keys — the right way to authenticate",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1100,7 +1025,7 @@
           "audio": "audio/08-09-ssh-keys.wav"
         },
         {
-          "heading": "SSH config \u2014 `~/.ssh/config`",
+          "heading": "SSH config — `~/.ssh/config`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1119,7 +1044,7 @@
           "audio": "audio/08-11-ssh-agent.wav"
         },
         {
-          "heading": "The SSH server \u2014 `sshd` and `/etc/ssh/sshd_config`",
+          "heading": "The SSH server — `sshd` and `/etc/ssh/sshd_config`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1129,7 +1054,7 @@
           "audio": "audio/08-12-ssh-server.wav"
         },
         {
-          "heading": "File transfer \u2014 `scp` and `rsync` over SSH",
+          "heading": "File transfer — `scp` and `rsync` over SSH",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1139,7 +1064,7 @@
           "audio": "audio/08-13-file-transfer.wav"
         },
         {
-          "heading": "Firewalls \u2014 controlling what can reach you",
+          "heading": "Firewalls — controlling what can reach you",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1149,7 +1074,7 @@
           "audio": "audio/08-14-firewalls.wav"
         },
         {
-          "heading": "Network troubleshooting \u2014 ping, traceroute, ss",
+          "heading": "Network troubleshooting — ping, traceroute, ss",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1158,11 +1083,6 @@
             "lx-sockets"
           ],
           "audio": "audio/08-15-network-troubleshooting.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -1173,12 +1093,7 @@
       "defaultScene": "linux",
       "sections": [
         {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
-        {
-          "heading": "The boot sequence \u2014 power-on to login prompt",
+          "heading": "The boot sequence — power-on to login prompt",
           "scene": "linux",
           "spine": true,
           "role": "hook",
@@ -1211,7 +1126,7 @@
           "audio": "audio/09-04-unit-types.wav"
         },
         {
-          "heading": "`systemctl` \u2014 the universal verb",
+          "heading": "`systemctl` — the universal verb",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1241,7 +1156,7 @@
           "audio": "audio/09-07-writing-a-service-unit.wav"
         },
         {
-          "heading": "Drop-ins \u2014 modifying a vendor unit without editing it",
+          "heading": "Drop-ins — modifying a vendor unit without editing it",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1251,7 +1166,7 @@
           "audio": "audio/09-08-drop-ins.wav"
         },
         {
-          "heading": "Targets \u2014 systemd's runlevels",
+          "heading": "Targets — systemd's runlevels",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1261,7 +1176,7 @@
           "audio": "audio/09-09-targets.wav"
         },
         {
-          "heading": "`journald` and `journalctl` \u2014 the systemd log system",
+          "heading": "`journald` and `journalctl` — the systemd log system",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1270,7 +1185,7 @@
           "audio": "audio/09-10-journald-journalctl.wav"
         },
         {
-          "heading": "Traditional logs \u2014 `/var/log/` and `rsyslog`",
+          "heading": "Traditional logs — `/var/log/` and `rsyslog`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1280,7 +1195,7 @@
           "audio": "audio/09-11-traditional-logs.wav"
         },
         {
-          "heading": "Package management \u2014 `apt` and `dnf`",
+          "heading": "Package management — `apt` and `dnf`",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1291,7 +1206,7 @@
           "audio": "audio/09-12-package-management.wav"
         },
         {
-          "heading": "Repositories \u2014 where packages come from",
+          "heading": "Repositories — where packages come from",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1299,11 +1214,6 @@
             "lx-apt"
           ],
           "audio": "audio/09-13-repositories.wav"
-        },
-        {
-          "heading": "What you've learned",
-          "scene": "linux",
-          "spine": false
         }
       ]
     },
@@ -1313,11 +1223,6 @@
       "notebook": "notebooks/10-scripting-troubleshooting-and-lfcs-prep.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "What's covered",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "Why this final chapter exists",
           "scene": "linux",
@@ -1335,7 +1240,7 @@
           "audio": "audio/10-03-shell-scripting-essentials.wav"
         },
         {
-          "heading": "Conditionals \u2014 `if`, `test`, `[[ ]]`",
+          "heading": "Conditionals — `if`, `test`, `[[ ]]`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1344,7 +1249,7 @@
           "audio": "audio/10-04-conditionals.wav"
         },
         {
-          "heading": "Loops \u2014 `for`, `while`, `until`",
+          "heading": "Loops — `for`, `while`, `until`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1363,7 +1268,7 @@
           "audio": "audio/10-06-functions-exit-codes.wav"
         },
         {
-          "heading": "`set -euo pipefail` \u2014 the production-script preamble",
+          "heading": "`set -euo pipefail` — the production-script preamble",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1392,7 +1297,7 @@
           "audio": "audio/10-09-troubleshooting-methodology.wav"
         },
         {
-          "heading": "Playbook 1 \u2014 disk is full",
+          "heading": "Playbook 1 — disk is full",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1403,7 +1308,7 @@
           "audio": "audio/10-10-playbook-disk-full.wav"
         },
         {
-          "heading": "Playbook 2 \u2014 out of memory",
+          "heading": "Playbook 2 — out of memory",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1414,7 +1319,7 @@
           "audio": "audio/10-11-playbook-out-of-memory.wav"
         },
         {
-          "heading": "Playbook 3 \u2014 runaway process pinning the CPU",
+          "heading": "Playbook 3 — runaway process pinning the CPU",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1425,7 +1330,7 @@
           "audio": "audio/10-12-playbook-runaway-cpu.wav"
         },
         {
-          "heading": "Playbook 4 \u2014 network is down",
+          "heading": "Playbook 4 — network is down",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1435,7 +1340,7 @@
           "audio": "audio/10-13-playbook-network-down.wav"
         },
         {
-          "heading": "Playbook 5 \u2014 service won't start",
+          "heading": "Playbook 5 — service won't start",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1446,7 +1351,7 @@
           "audio": "audio/10-14-playbook-service-wont-start.wav"
         },
         {
-          "heading": "Mandatory Access Control \u2014 SELinux and AppArmor",
+          "heading": "Mandatory Access Control — SELinux and AppArmor",
           "scene": "linux",
           "spine": true,
           "highlight": [
@@ -1456,7 +1361,7 @@
           "audio": "audio/10-15-mandatory-access-control.wav"
         },
         {
-          "heading": "Performance monitoring \u2014 `vmstat`, `iostat`, `sar`",
+          "heading": "Performance monitoring — `vmstat`, `iostat`, `sar`",
           "scene": "linux",
           "spine": false,
           "highlight": [
@@ -1467,7 +1372,7 @@
           "audio": "audio/10-16-performance-monitoring.wav"
         },
         {
-          "heading": "The LFCS exam \u2014 what to expect",
+          "heading": "The LFCS exam — what to expect",
           "scene": "linux",
           "spine": true,
           "audio": "audio/10-17-lfcs-exam.wav"
@@ -1485,13 +1390,13 @@
           "audio": "audio/10-19-lfcs-prep-checklist.wav"
         },
         {
-          "heading": "After LFCS \u2014 where to go next",
+          "heading": "After LFCS — where to go next",
           "scene": "linux",
           "spine": false,
           "audio": "audio/10-20-after-lfcs.wav"
         },
         {
-          "heading": "Closing the loop \u2014 the curriculum recap",
+          "heading": "Closing the loop — the curriculum recap",
           "scene": "linux",
           "spine": false
         }
