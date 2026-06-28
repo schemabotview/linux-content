@@ -119,11 +119,6 @@
       "defaultScene": "linux",
       "sections": [
         {
-          "heading": "A quick recap and where we're going",
-          "scene": "linux",
-          "spine": false
-        },
-        {
           "heading": "Keyboard shortcuts — the ones that pay back instantly",
           "scene": "linux",
           "spine": false,
@@ -231,11 +226,6 @@
       "notebook": "notebooks/03-files-folders-and-permissions.ipynb",
       "defaultScene": "linux",
       "sections": [
-        {
-          "heading": "Where we're going",
-          "scene": "linux",
-          "spine": false
-        },
         {
           "heading": "Creating files and directories — `touch` and `mkdir`",
           "scene": "linux",
@@ -1224,11 +1214,6 @@
       "defaultScene": "linux",
       "sections": [
         {
-          "heading": "Why this final chapter exists",
-          "scene": "linux",
-          "spine": false
-        },
-        {
           "heading": "Shell scripting essentials",
           "scene": "linux",
           "spine": true,
@@ -1394,11 +1379,6 @@
           "scene": "linux",
           "spine": false,
           "audio": "audio/10-20-after-lfcs.wav"
-        },
-        {
-          "heading": "Closing the loop — the curriculum recap",
-          "scene": "linux",
-          "spine": false
         }
       ]
     }
